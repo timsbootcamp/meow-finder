@@ -9,6 +9,10 @@ body {
     background-color: var(--orange);
     margin: 50px 150px;
     line-height: 10px;
+    background-image: url("LeftWave_4.webp");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /*Catalogue Cards*/
@@ -19,10 +23,13 @@ body {
     padding-bottom: 25px;
 }
 
+.card-img-top {
+    object-fit: contain;
+}
+
 .card {
     background-color: var(--cream);
     color: var(--orange);
-    border-radius: 15px !important;
 }
 
 .card-title {
