@@ -6,7 +6,7 @@ const baseUrl_TheCatAPI = `https://api.thecatapi.com/v1/images/search?size=med&m
 
 const headers = new Headers({
   "Content-Type": "application/json",
-  "x-api-key": apiKey
+  "x-api-key": apiKey_TheCatAPI
 });
 
 //request settings
@@ -25,7 +25,7 @@ function updateHTML_RandomCatFact(fact) {
 
 //getting a fact about a cat using API
 function getRandomCatFact() {
-  fetch(url, requestOptions)
+  fetch(baseUrl_TheCatAPI, requestOptions)
     .then(response => response.json())
     .then(result => updateHTML_RandomCatFact(result[0].breeds[0].description))
     .catch(error => console.log('error', error));
