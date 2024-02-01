@@ -9,6 +9,10 @@ body {
     background-color: var(--orange);
     margin: 50px 150px;
     line-height: 10px;
+    background-image: url("LeftWave_4.webp");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /*Catalogue Cards*/
