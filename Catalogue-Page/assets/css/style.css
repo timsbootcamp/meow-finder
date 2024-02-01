@@ -1,0 +1,35 @@
+:root {
+    --orange: #F78460;
+    --cream: #FFEBD4;
+    --yellow: #FCFF75;
+}
+
+body {
+    text-align: center;
+    background-color: var(--orange);
+    margin: 50px 150px;
+    line-height: 10px;
+}
+
+/*Catalogue Cards*/
+#catalogue h2 {
+    color: var(--yellow);
+    text-decoration: underline;
+    font-size: 25px;
+    padding-bottom: 25px;
+}
+
+.card {
+    background-color: var(--cream);
+    color: var(--orange);
+    border-radius: 15px !important;
+}
+
+.card-title {
+    padding-bottom: 10px;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+}
