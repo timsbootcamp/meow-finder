@@ -1,3 +1,9 @@
+:root {
+    --orange: #F78460;
+    --cream: #FFEBD4;
+    --yellow: #FCFF75;
+}
+
 body {
     font-family: Arial, sans-serif;
     font-size: large;
@@ -30,4 +36,61 @@ header {
 input {
     width: 50%;
     padding: 5px;
+}
+
+/* Buttons styling */
+button {
+    background-color: rgb(248, 146, 86);;
+    color: black; /* Text color */
+}
+/* Button hover over styling */
+button:hover {
+    color: #1A1A1A; /* Change 'your_hover_color' to the desired hover color */
+    font-weight: bold;
+}
+/* when hover over button - it displays coloured box shadow */
+.btn-primary-hover-shadow:hover {
+    box-shadow: 0px 4px 8px  #73FBFD !important;
+}
+
+/*Catalogue Cards*/
+#results {
+    text-align: center;
+}
+
+#results h2 {
+    color: var(--yellow);
+    text-decoration: underline;
+    font-size: 25px;
+    padding-bottom: 25px;
+}
+
+.hide {
+    content-visibility: hidden;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 375px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .card-img-top {
+        object-fit: cover;
+        height: 200px;
+    }
+}
+
+.card {
+    background-color: var(--cream);
+    color: var(--orange);
+}
+
+.card-title {
+    padding-bottom: 10px;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
 }
