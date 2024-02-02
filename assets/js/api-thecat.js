@@ -44,7 +44,7 @@ function updateHTML_RandomCatImage(linkImage) {
 
 //getting image a cat using API
 function getRandomCatImage() {
-  fetch(url_Thecatapi, requestOptions)
+  fetch(baseUrl_TheCatAPI, requestOptions)
     .then(response => response.json())
     .then(result => updateHTML_RandomCatImage(result[0].url))
     .catch(error => console.log('error', error));
