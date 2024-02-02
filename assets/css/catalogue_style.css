@@ -7,8 +7,18 @@
 body {
     text-align: center;
     background-color: var(--orange);
-    margin: 50px 150px;
     line-height: 10px;
+    background-image: url("LeftWave_4.webp");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 50px 250px;
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        margin: 50px 150px;
+    }
 }
 
 /*Catalogue Cards*/
@@ -17,6 +27,18 @@ body {
     text-decoration: underline;
     font-size: 25px;
     padding-bottom: 25px;
+}
+
+.card-img-top {
+    object-fit: cover;
+    height: 375px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .card-img-top {
+        object-fit: cover;
+        height: 200px;
+    }
 }
 
 .card {
