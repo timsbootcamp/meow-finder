@@ -16,30 +16,6 @@
     </header>
 
     <!-- Button trigger modal -->
-    <!--
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#error">
-      Error
-    </button>
-  -->
-
-    <!-- Modal -->
-        <div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div id="error-message" class="modal-body">
-                  <p>Please enter a valid cat breed</p>
-                </div>
-              <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <main>
     <div class="container mt-5">
         <form action="/search" method="get">
@@ -122,7 +98,7 @@
     <div id="results">
         <div id="catalogue-cards" class="row row-cols-1 row-cols-md-3 g-5">
           
-            <div id="cat-breed1" class="col">
+            <div id="cat-breed1" class="col hide">
               <div class="card h-100">
                 <img id="cat-breed1-image" class="card-img-top">
                 <div class="card-body">

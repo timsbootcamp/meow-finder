@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'PicNic';
+    src: url('./fonts/PicNic-Regular.otf') format('otf');
+}
+
+
+h1 {
+    font-family: 'PicNic', Arial, sans-serif;
+}
+
 :root {
     --orange: #F78460;
     --cream: #FFEBD4;
