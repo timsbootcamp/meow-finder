@@ -1,6 +1,9 @@
 $(document).ready(function () {
-    loadCatalogueData();
+        loadCatalogueData();
+    
 });
+
+
 
 
 // Load Catalogue Data
@@ -31,4 +34,3 @@ function updateCatalogue_HTML_Dynamically(data) {
         
     }
 };
-

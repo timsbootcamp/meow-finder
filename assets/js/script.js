@@ -207,18 +207,24 @@ function getListOfAllCats_NinjaAPI() {
 
 
 // Display search results on html page using dynamic html
-function displaySearchResults_DynamicHTML(data) {
+  function displaySearchResults_DynamicHTML(data) {
     // Initalise Search Results
     $(".searchResults").empty("");
-  
     // Parse each Cat from array
     $.each(data, function (index, item) {
       let lineData = item.name + ", Min Weight:" + item.min_weight + ", Max Weight:" + item.max_weight;
       lineData = lineData + ", Min Life:" + item.min_life_expectancy + ", Max Life:" + item.max_life_expectancy;
       lineData = lineData + ", Family Friendly:" + item.family_friendly + ", Playful:" + item.playfulness;
       lineData = lineData + ", Friendly with other pets:" + item.other_pets_friendly + ", Children Friendly:" + item.children_friendly;
-   
       $(".searchResults").append($("<div>").append("<span>").text(lineData));
+      // Handling image
+      //
+      let imageContainer = $(`#cat-breed${i + 1}-image`);
+      imageContainer.attr('src', data[i].image_link);
+      imageContainer.attr('alt', 'Cat Breed');
+      // $("#cat-breed1").removeClass("hide");
     });
+    $.each(data, function (index, item) {
+      //cat-breed1 "col hide"
+  });
   }
-  
