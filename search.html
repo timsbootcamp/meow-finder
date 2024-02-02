@@ -14,6 +14,32 @@
             <h1>Meow Finder</h1>
         </nav>
     </header>
+
+    <!-- Button trigger modal -->
+    <!--
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#error">
+      Error
+    </button>
+  -->
+
+    <!-- Modal -->
+        <div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="error-message" class="modal-body">
+                  <p>Please enter a valid cat breed</p>
+                </div>
+              <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <main>
     <div class="container mt-5">
         <form action="/search" method="get">
@@ -628,7 +654,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
     <!-- Link to a Javascript file to get a fact about a cat using the API -->
     <script src="assets/js/api-thecat.js"></script>
     <!-- Link to main Javascript file -->

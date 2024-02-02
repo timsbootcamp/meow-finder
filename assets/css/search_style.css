@@ -53,6 +53,34 @@ button:hover {
     box-shadow: 0px 4px 8px  #73FBFD !important;
 }
 
+/*Modal Form*/
+.modal-content {
+    background-color: #FFEBD4;
+}
+
+.modal-body {
+    border: #F78460 !important;
+}
+
+.modal-body p {
+    color: #F78460;
+}
+
+.modal-title {
+    color: #F78460;
+}
+
+.modal-footer button {
+    background-color: #F78460;
+    border: #F78460;
+}
+
+.modal-footer button:hover {
+    background-color: #FCFF75;
+    border: #FCFF75;
+    color: #F78460;
+}
+
 /*Catalogue Cards*/
 #results {
     text-align: center;
