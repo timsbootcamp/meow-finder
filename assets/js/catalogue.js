@@ -1,6 +1,7 @@
 $(document).ready(function () {
+    if (window.location.pathname.includes("catalogue.html")) {
         loadCatalogueData();
-    
+    }
 });
 
 

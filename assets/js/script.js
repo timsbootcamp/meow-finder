@@ -219,8 +219,8 @@ function getListOfAllCats_NinjaAPI() {
       $(".searchResults").append($("<div>").append("<span>").text(lineData));
       // Handling image
       //
-      let imageContainer = $(`#cat-breed${i + 1}-image`);
-      imageContainer.attr('src', data[i].image_link);
+      let imageContainer = $(`#cat-breed1-image`);
+      imageContainer.attr('src', data[0].image_link);
       imageContainer.attr('alt', 'Cat Breed');
       // $("#cat-breed1").removeClass("hide");
     });
