@@ -1,5 +1,5 @@
 :root {
-    --orange: #F78460;
+    --orange: rgb(255, 122, 80);
     --cream: #FFEBD4;
     --yellow: #FCFF75;
 }
@@ -36,6 +36,34 @@ header {
 h1 {
     font-family: 'PicNic', Arial, sans-serif;
     
+}
+
+/*Error Pop up*/
+.modal-content {
+    background-color: var(--cream);
+}
+
+.modal-body {
+    border: var(--orange) !important;
+}
+
+.modal-body p {
+    color: var(--orange);
+}
+
+.modal-title {
+    color: var(--orange);
+}
+
+.modal-footer button {
+    background-color: var(--orange);
+    border: var(--orange);
+}
+
+.modal-footer button:hover {
+    background-color: var(--yellow);
+    border: var(--yellow);
+    color: var(--orange);
 }
 
 #checkboxes {
