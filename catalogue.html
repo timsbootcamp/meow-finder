@@ -13,7 +13,34 @@
 
 <body>
 
-    <header>
+    <header class="navbar">
+
+      <label class="logo"><img src="./assets/images/head-y logo.png"></label>
+      <ul>
+        <li><a type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="./assets/images/icon1.png"></label></a></li>
+        <li><a href = "search.html">Search</a></li>
+        <li><a href = "catalogue.html">Catalogue</a></li>
+      </ul>
+
+      <div id="modal-cat-fact">
+        <div class="modal fade" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">Cat Fact!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img id="cat-fact-img">
+                <p id="cat-fact-text">...</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </header>
 
