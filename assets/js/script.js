@@ -211,14 +211,29 @@ function displaySearchResults_DynamicHTML(data) {
     // Initalise Search Results
     $(".searchResults").empty("");
   
-    // Parse each Cat from array
-    $.each(data, function (index, item) {
-      let lineData = item.name + ", Min Weight:" + item.min_weight + ", Max Weight:" + item.max_weight;
-      lineData = lineData + ", Min Life:" + item.min_life_expectancy + ", Max Life:" + item.max_life_expectancy;
-      lineData = lineData + ", Family Friendly:" + item.family_friendly + ", Playful:" + item.playfulness;
-      lineData = lineData + ", Friendly with other pets:" + item.other_pets_friendly + ", Children Friendly:" + item.children_friendly;
-   
-      $(".searchResults").append($("<div>").append("<span>").text(lineData));
-    });
+    // Initialise all boxes to blank
+    len=Object.entries(data).length;
+    for (var i = 0; i <= 19; i++) {
+      let imageContainer = $(`#cat-breed${i + 1}-image`);
+      imageContainer.attr('src', "");
+      imageContainer.attr('alt', '');
+      $(`#cat-breed${i+1}`).addClass("hide");
+    }
+
+    let lineData;
+    for (var i = 0; i <= len-1; i++) {
+      // lineData = data[i].name + ", Min Weight:" + data[i].min_weight + ", Max Weight:" + data[i].max_weight;      
+  
+      // Handling image to display within card in html
+      let imageContainer = $(`#cat-breed${i + 1}-image`);
+      imageContainer.attr('src', data[i].image_link);
+      imageContainer.attr('alt', data[i].name);
+
+      // Remove hide class so image is visible
+      $(`#cat-breed${i+1}`).removeClass("hide");
+
+    }
+
+  
   }
   
