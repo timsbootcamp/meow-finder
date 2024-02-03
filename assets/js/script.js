@@ -224,6 +224,14 @@ function displaySearchResults_DynamicHTML(data) {
     for (var i = 0; i <= len-1; i++) {
       // lineData = data[i].name + ", Min Weight:" + data[i].min_weight + ", Max Weight:" + data[i].max_weight;      
   
+      // Add Cat information dynamically
+      $(`#cat-breed-title${i + 1}`).text(data[i].name);
+
+      $(`#playfulness-trait${i + 1}`).text("Playfulness");
+      $(`#child-friendly-trait${i + 1}`).text("Child-Friendly");
+      $(`#family-friendly-trait${i + 1}`).text("Family-Friendly");
+      $(`#pet-friendly-trait${i + 1}`).text("Pet-Friendly");
+
       // Handling image to display within card in html
       let imageContainer = $(`#cat-breed${i + 1}-image`);
       imageContainer.attr('src', data[i].image_link);
