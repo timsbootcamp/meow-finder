@@ -1,3 +1,6 @@
+// Constant for key for local storage
+const localStorageKey_meowFinder= "meow-finder";
+
 
 //location of the picture star
 const imageStar = "./assets/images/star.png";
