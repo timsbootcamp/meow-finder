@@ -13,13 +13,17 @@ async function fetchDataFrom_NinjaAPI() {
   
       // Read form input fields from HTML page and return object
       let filtersSearch = readSearchFilterFieldsfromForm();
-  
+
+      writeToLocalStorage(filtersSearch);
+
       // The data returned from the API and the user search filtering parameters are passed
-      let filteredData = filterRecords(data, filtersSearch)
+      let filteredData =  filterRecords(data, filtersSearch)
   
       // Display data
       displaySearchResults_DynamicHTML(filteredData, true);
   
+
+
     } catch (error) {
       console.error("Error fetching data:", error);
     }

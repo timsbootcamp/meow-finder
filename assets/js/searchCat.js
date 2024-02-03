@@ -9,6 +9,51 @@ $("#search").on("click", function (event) {
 })
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    
+    let settingsData = readFromLocalStorage();
+   
+    if (settingsData) {
+        $("#id_NameCatBreed").val(settingsData.NameCatBreed);
+        $("#id_MinWeight").val(settingsData.MinWeight);
+        $("#id_MaxWeight").val(settingsData.MaxWeight);   
+
+        $("#id_MinLifeExpectancy").val(settingsData.MinLifeExpectancy);   
+        $("#id_MaxLifeExpectancy").val(settingsData.MaxLifeExpectancy);   
+
+        if (settingsData.FamilyFriendly) {
+          $("#id_FamilyFriendly").prop("checked", true);   
+        }
+        else {
+          $("#id_FamilyFriendly").prop("checked", false);;   
+        }
+        
+        if (settingsData.Playfulness) {
+          $("#id_Playfulness").prop("checked", true);   
+        }
+        else {
+          $("#id_Playfulness").prop("checked", false);;   
+        }
+
+        if (settingsData.FriendlyWithOtherPets) {
+          $("#id_FriendlyWithOtherPets").prop("checked", true);   
+        }
+        else {
+          $("#id_FriendlyWithOtherPets").prop("checked", false);;   
+        }
+
+        if (settingsData.ChildrenFriendly) {
+          $("#id_ChildrenFriendly").prop("checked", true);   
+        }
+        else {
+          $("#id_ChildrenFriendly").prop("checked", false);;   
+        }
+      }
+
+    
+    console.log("");
+})  
+
 // This function takes as parameters : the data returned from the API and the user search filtering parameters
 // For each field, we are checking to see if user has specified any search filtering and if so then filter the data
 function filterRecords(dataOrig, parameters) {
