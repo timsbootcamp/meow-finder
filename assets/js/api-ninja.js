@@ -18,7 +18,7 @@ async function fetchDataFrom_NinjaAPI() {
       let filteredData = filterRecords(data, filtersSearch)
   
       // Display data
-      displaySearchResults_DynamicHTML(filteredData);
+      displaySearchResults_DynamicHTML(filteredData, true);
   
     } catch (error) {
       console.error("Error fetching data:", error);

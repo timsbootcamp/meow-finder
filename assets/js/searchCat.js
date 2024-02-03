@@ -1,3 +1,4 @@
+//'searchCat.js' holds all Javascript related to search.html
 
 
 // When the element with the ID "search" is clicked, the below function will run
@@ -132,39 +133,4 @@ function readSearchFilterFieldsfromForm() {
       ChildrenFriendly: $("#id_ChildrenFriendly").prop("checked")
     }
 }
-  
-
-// Display search results on html page using dynamic html
-function displaySearchResults_DynamicHTML(data) {
-    // Initalise Search Results
-    $(".searchResults").empty("");
-  
-    // Initialise all boxes to blank
-    len=Object.entries(data).length;
-    for (var i = 0; i <= 19; i++) {
-      let imageContainer = $(`#cat-breed${i + 1}-image`);
-      imageContainer.attr('src', "");
-      imageContainer.attr('alt', '');
-      $(`#cat-breed${i+1}`).addClass("hide");
-    }
-
-    let lineData;
-    for (var i = 0; i <= len-1; i++) {
-        // Add Cat information dynamically
-      $(`#cat-breed-title${i + 1}`).text(data[i].name);
-      $(`#playfulness-trait${i + 1}`).text("Playfulness");
-      $(`#child-friendly-trait${i + 1}`).text("Child-Friendly");
-      $(`#family-friendly-trait${i + 1}`).text("Family-Friendly");
-      $(`#pet-friendly-trait${i + 1}`).text("Pet-Friendly");
-
-      // Handling image to display within card in html
-      let imageContainer = $(`#cat-breed${i + 1}-image`);
-      imageContainer.attr('src', data[i].image_link);
-      imageContainer.attr('alt', data[i].name);
-
-      // Remove hide class so image is visible
-      $(`#cat-breed${i+1}`).removeClass("hide");
-    }
-
-}
-  
+    
