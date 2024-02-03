@@ -1,24 +1,30 @@
+:root {
+    --orange: #F78460;
+    --cream: #FFEBD4;
+    --yellow: #FCFF75;
+}
+
+@font-face {
+    font-family: 'PicNic';
+    src: url('../fonts/PicNic-Regular.otf');
+}
+
 body {
-    font-family: 'PicNic', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: large;
     font-weight: 200;
     margin: 0;
     padding: 0;
-    background-color: bisque;
-    display: flex;
-    flex-direction: column;
+    background-color: var(--cream);
     min-height: 100vh;
 }
-body {
-    font-family: Arial, sans-serif;
-    /* Use 'PicNic' as the primary font and fallback to Arial and sans-serif if needed */
-}
+
 main {
     flex: 1;
 }
 
 header {
-    background-color: rgb(248, 146, 86);
+    background-color: var(--orange);
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -27,42 +33,36 @@ header {
     align-items: center;
 }
 
-input {
-    width: 50%;
-    padding: 20px;
-}
-:root {
-    --orange: #F78460;
-    --cream: #FFEBD4;
-    --yellow: #FCFF75;
+h1 {
+    font-family: 'PicNic', Arial, sans-serif;
+    
 }
 
-.button {
-    background-color: rgb(248, 146, 86);
-    color: black; 
-    border: 2px solid red; 
+#checkboxes {
+    text-align: center;
 }
 
 .btn-secondary {
-    color: black;
-    background-color: rgb(248, 146, 86);
-    border-color: 2px solid red;
+    color: var(--cream);
+    background-color: var(--orange);
+    border-color: var(--orange) !important;
 }
+
 button:hover {
     color: #1A1A1A; 
     font-weight: bold;
-    background-color: yellow;
+    background-color: var(--yellow);
+    border: var(--yellow);
 }
+
 .btn-secondary:hover {
-    color: #1A1A1A; 
+    color: var(--orange); 
     font-weight: bold;
-    background-color: yellow;
+    background-color: var(--yellow);
+    box-shadow: 0px 4px 8px var(--orange) !important;
 }
 
-
-.btn-primary-hover-shadow:hover {
-    box-shadow: 0px 4px 8px #73FBFD !important;
-}
+/*Result cards*/
 
 #results {
     text-align: center;
@@ -92,8 +92,8 @@ button:hover {
 }
 
 .card {
-    background-color: var(--cream) ;
-    color: var(--orange) ;
+    background-color: var(--orange) !important;
+    color: var(--cream) !important;
 }
 
 .card-title {
@@ -103,13 +103,4 @@ button:hover {
 .description {
     display: flex ;
     justify-content: space-between ;
-}
-@font-face {
-    font-family: 'PicNic';
-    src: url('../fonts/PicNic-Regular.otf');
-}
-
-h1 {
-    font-family: 'PicNic', Arial, sans-serif;
-    
 }
