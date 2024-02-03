@@ -54,3 +54,8 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+/* added by Tim */
+.hide {
+    content-visibility: hidden;
+}

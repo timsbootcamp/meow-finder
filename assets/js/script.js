@@ -7,9 +7,26 @@ const baseUrl_NinjaAPI = `https://api.api-ninjas.com/v1/cats`;
 // When the element with the ID "search" is clicked, the below function will run
 $("#search").on("click", function (event) {
     event.preventDefault();
+
+    // BEGIN
+    // let data = fetchDataFrom_NinjaAPI();
+
+    let filtersSearch = readSearchFilterFieldsfromForm();
+    
+    var data = {
+      key1: "value1",
+      key2: "value2"
+    };
+    
+    // Construct query string
+    var queryString = Object.keys(filtersSearch).map(key => key + '=' + encodeURIComponent(filtersSearch[key])).join('&');
+    
+    // Navigate to another webpage with the data as query parameters
+    window.location.href = "Catalogue.html?" + queryString;    
   
-    let data = fetchDataFrom_NinjaAPI();
-})
+    // END
+
+  })
 
 
 // This function takes as parameters : the data returned from the API and the user search filtering parameters
@@ -76,7 +93,7 @@ function filterRecords(dataOrig, parameters) {
   
     // Family Friendly
     filteredData = [];
-    if (parameters && parameters.FamilyFriendly) {
+    if (parameters && parameters.FamilyFriendly==='true') {
       data.forEach(cat => {
         if (Number(cat.family_friendly) >= 4) {
           filteredData.push(cat); // add to array
@@ -87,7 +104,7 @@ function filterRecords(dataOrig, parameters) {
   
     // Playfulness
     filteredData = [];
-    if (parameters && parameters.Playfulness) {
+    if (parameters && parameters.Playfulness==='true') {
       data.forEach(cat => {
         if (cat.playfulness >= 3) {
           filteredData.push(cat); // add to array
@@ -98,7 +115,7 @@ function filterRecords(dataOrig, parameters) {
   
     // Friendly with other pets
     filteredData = [];
-    if (parameters && parameters.FriendlyWithOtherPets) {
+    if (parameters && parameters.FriendlyWithOtherPets==='true') {
       data.forEach(cat => {
         if (Number(cat.other_pets_friendly) >= 4) {
           filteredData.push(cat); // add to array
@@ -109,7 +126,7 @@ function filterRecords(dataOrig, parameters) {
   
     // Children Friendly
     filteredData = [];
-    if (parameters && parameters.ChildrenFriendly) {
+    if (parameters && parameters.ChildrenFriendly==='true') {
       data.forEach(cat => {
         if (cat.children_friendly >= 5) {
           filteredData.push(cat); // add to array
@@ -146,15 +163,15 @@ function readSearchFilterFieldsfromForm() {
 
 
 
-async function fetchDataFrom_NinjaAPI() {
+async function fetchDataFrom_NinjaAPI(filtersSearch) {
     try {
   
       // Wait until below statement runs and gets data populated
       let data = await getListOfAllCats_NinjaAPI();
       // 'data' variable is now populated with data
   
-      // Read form input fields from HTML page and return object
-      let filtersSearch = readSearchFilterFieldsfromForm();
+      // // Read form input fields from HTML page and return object
+      // let filtersSearch = readSearchFilterFieldsfromForm();
   
       // The data returned from the API and the user search filtering parameters are passed
       let filteredData = filterRecords(data, filtersSearch)
@@ -168,8 +185,6 @@ async function fetchDataFrom_NinjaAPI() {
     }
   }
   
-  
-
 
 function getListOfAllCats_NinjaAPI() {
     return new Promise((resolve, reject) => {
@@ -206,34 +221,3 @@ function getListOfAllCats_NinjaAPI() {
 }
 
 
-// Display search results on html page using dynamic html
-function displaySearchResults_DynamicHTML(data) {
-    // Initalise Search Results
-    $(".searchResults").empty("");
-  
-    // Initialise all boxes to blank
-    len=Object.entries(data).length;
-    for (var i = 0; i <= 19; i++) {
-      let imageContainer = $(`#cat-breed${i + 1}-image`);
-      imageContainer.attr('src', "");
-      imageContainer.attr('alt', '');
-      $(`#cat-breed${i+1}`).addClass("hide");
-    }
-
-    let lineData;
-    for (var i = 0; i <= len-1; i++) {
-      // lineData = data[i].name + ", Min Weight:" + data[i].min_weight + ", Max Weight:" + data[i].max_weight;      
-  
-      // Handling image to display within card in html
-      let imageContainer = $(`#cat-breed${i + 1}-image`);
-      imageContainer.attr('src', data[i].image_link);
-      imageContainer.attr('alt', data[i].name);
-
-      // Remove hide class so image is visible
-      $(`#cat-breed${i+1}`).removeClass("hide");
-
-    }
-
-  
-  }
-  
