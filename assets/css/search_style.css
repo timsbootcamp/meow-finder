@@ -15,7 +15,7 @@ body {
     font-weight: 200;
     margin: 0;
     padding: 0;
-    background-color: var(--cream);
+    background-color: rgb(255, 122, 80);
     min-height: 100vh;
 }
 /* NAVBAR-BEGIN */
@@ -23,6 +23,8 @@ body {
     position: absolute;
     top:0px;
     width: 100vw;
+    background-color: rgb(255, 122, 80);
+    height:120px;
 }
 .logo {
     position:fixed;
@@ -78,6 +80,7 @@ body {
 main {
     flex: 1;
     padding:120px;
+    background-color: rgb(255, 122, 80);
 }
 
 /* header {
@@ -100,26 +103,30 @@ main {
 }
 
 .btn-secondary {
-    color: var(--cream);
-    background-color: var(--orange);
-    border-color: var(--orange) !important;
+    color: rgb(255, 122, 80);
+    background-color: rgb(252, 255, 117);
+    border-color: rgb(252, 255, 117) !important;
 }
 
 button:hover {
     color: #1A1A1A; 
     font-weight: bold;
-    background-color: var(--yellow);
-    border: var(--yellow);
+    background-color: rgb(255, 122, 80);
+    border: rgb(252, 255, 117);
 }
 
 .btn-secondary:hover {
-    color: var(--orange); 
+    color: rgb(252, 255, 117); 
     font-weight: bold;
-    background-color: var(--yellow);
-    box-shadow: 0px 4px 8px var(--orange) !important;
+    background-color: rgb(241, 99, 56);
+    box-shadow: 0px 4px 8px rgb(252, 255, 117) !important;
 }
 
 /*Result cards*/
+#no-cat-results{
+    text-align: center;
+}
+
 
 #results {
     text-align: center;
@@ -149,8 +156,8 @@ button:hover {
 }
 
 .card {
-    background-color: var(--orange) !important;
-    color: var(--cream) !important;
+    background-color:#FFEBD4 !important;
+    color: rgb(241, 99, 56) !important;
 }
 
 .card-title {
