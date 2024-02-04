@@ -11,6 +11,8 @@ const soundFile_Meow = "assets/sfx/meow01.mp3";
 // Dynamically populate in HTML - this function is shared between api-ninja.js and catalogue.js
 function displaySearchResults_DynamicHTML(data, flag) {
     
+    playSoundFile(soundFile_Meow);
+
     // Initalise Search Results
     $(".searchResults").empty("");
     
