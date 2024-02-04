@@ -1,5 +1,5 @@
 :root {
-    --orange: #F78460;
+    --orange: rgb(255, 122, 80);
     --cream: #FFEBD4;
     --yellow: #FCFF75;
 }
@@ -15,7 +15,7 @@ body {
     font-weight: 200;
     margin: 0;
     padding: 0;
-    background-color: var(--cream);
+    background-color: rgb(255, 122, 80);
     min-height: 100vh;
 }
 /* NAVBAR-BEGIN */
@@ -23,6 +23,8 @@ body {
     position: absolute;
     top:0px;
     width: 100vw;
+    background-color: rgb(255, 122, 80);
+    height:120px;
 }
 .logo {
     position:fixed;
@@ -78,6 +80,7 @@ body {
 main {
     flex: 1;
     padding:120px;
+    background-color: var(--orange);
 }
 
 /* header {
@@ -100,33 +103,37 @@ main {
 }
 
 .btn-secondary {
-    color: var(--cream);
-    background-color: var(--orange);
-    border-color: var(--orange) !important;
+    color: var(--orange);
+    background-color: var(--yellow);
+    border-color: var(--yellow) !important;
 }
 
 button:hover {
     color: #1A1A1A; 
     font-weight: bold;
-    background-color: var(--yellow);
+    background-color: var(--orange);
     border: var(--yellow);
 }
 
 .btn-secondary:hover {
-    color: var(--orange); 
+    color: var(--yellow); 
     font-weight: bold;
-    background-color: var(--yellow);
-    box-shadow: 0px 4px 8px var(--orange) !important;
+    background-color: var(--orange);
+    box-shadow: 0px 4px 8px var(--yellow) !important;
 }
 
 /*Result cards*/
+#no-cat-results{
+    text-align: center;
+}
+
 
 #results {
     text-align: center;
 }
 
 #results h2 {
-    color: var(--yellow) ;
+    color: var(--orange) ;
     text-decoration: underline ;
     font-size: 25px ;
     padding-bottom: 25px ;
@@ -149,8 +156,8 @@ button:hover {
 }
 
 .card {
-    background-color: var(--orange) !important;
-    color: var(--cream) !important;
+    background-color: var(--cream) !important;
+    color: var(--orange) !important;
 }
 
 .card-title {
