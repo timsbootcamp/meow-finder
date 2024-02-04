@@ -1,5 +1,5 @@
 :root {
-    --orange: #F78460;
+    --orange: rgb(255, 122, 80);
     --cream: #FFEBD4;
     --yellow: #FCFF75;
 }
@@ -8,17 +8,22 @@ body {
     text-align: center;
     background-color: var(--orange);
     line-height: 10px;
-    background-image: url("LeftWave_4.webp");
-    background-position: left;
-    background-size: contain;
+    background-image: url("../images/wave-background.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto;
     background-repeat: no-repeat;
-    margin: 50px 250px;
 }
 
-@media only screen and (max-width: 1200px) {
-    body {
-        margin: 50px 150px;
-    }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
 }
 
 /*Modal Form*/
@@ -55,6 +60,16 @@ body {
 
 
 /*Catalogue Cards*/
+#catalogue {
+    margin: 150px 250px;
+}
+
+@media only screen and (max-width: 1200px) {
+    #catalogue {
+        margin: 150px 150px;
+    }
+}
+
 #catalogue h2 {
     color: var(--yellow);
     text-decoration: underline;
@@ -86,4 +101,11 @@ body {
 .description {
     display: flex;
     justify-content: space-between;
+}
+
+@media only screen and (max-width: 1200px) {
+    .description {
+        display: flex;
+        flex-direction: column;
+    }
 }
