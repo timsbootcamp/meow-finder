@@ -9,7 +9,9 @@ const soundFile_Meow = "assets/sfx/meow01.mp3";
 
 
 function displaySearchResults_DynamicHTML(data, flag) {
-    
+
+    playSoundFile(soundFile_Meow);
+
     let len = Object.entries(data).length
 
     $('#catalogue-cards').empty("")
