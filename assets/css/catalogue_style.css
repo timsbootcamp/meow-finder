@@ -21,6 +21,39 @@ body {
     }
 }
 
+/*Modal Form*/
+.modal-content {
+    background-color: var(--cream);
+}
+
+.modal-body {
+    border: var(--orange) !important;
+}
+
+.modal-body p {
+    color: var(--orange);
+}
+
+.modal-title {
+    color: var(--orange);
+}
+
+.modal-footer button {
+    background-color: var(--orange);
+    border: var(--orange);
+}
+
+.modal-footer button:hover {
+    background-color: var(--yellow);
+    border: var(--yellow);
+    color: var(--orange);
+}
+
+.modal-body img {
+    padding-bottom: 50px;
+}
+
+
 /*Catalogue Cards*/
 #catalogue h2 {
     color: var(--yellow);

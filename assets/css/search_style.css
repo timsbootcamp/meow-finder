@@ -62,10 +62,44 @@ button:hover {
     box-shadow: 0px 4px 8px var(--orange) !important;
 }
 
+/*Modal Form*/
+.modal-content {
+    background-color: var(--cream);
+}
+
+.modal-body {
+    border: var(--orange) !important;
+}
+
+.modal-body p {
+    color: var(--orange);
+}
+
+.modal-title {
+    color: var(--orange);
+}
+
+.modal-footer button {
+    background-color: var(--orange);
+    border: var(--orange);
+}
+
+.modal-footer button:hover {
+    background-color: var(--yellow);
+    border: var(--yellow);
+    color: var(--orange);
+}
+
+.modal-body img {
+    padding-bottom: 50px;
+}
+
+
 /*Result cards*/
 
 #results {
     text-align: center;
+    padding-top: 100px;
 }
 
 #results h2 {
