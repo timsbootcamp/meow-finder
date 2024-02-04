@@ -1,5 +1,50 @@
-<html>
-    <body>
-        <h1>About Page</h1>
-    </body>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About</title>
+  
+  
+    <link rel="stylesheet" href="assets/css/about_style.css" />
+   
+</head>
+
+
+<body>
+  <header class="navbar">
+    <label class="logo"><img src="assets/images/paw_nav.png"></label>
+   
+    <ul>
+      <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
+      <li><a href = "index.html">Home</a></li></lil>
+      <li><a href = "search.html">Search</a></li>
+      <li><a href = "catalogue.html">Catalogue</a></li>
+      <li><a href = "about.html">About</a></li>
+    </ul>
+    
+    <div id="modal-cat-fact">
+      <div class="modal fade" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Cat Fact!</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img id="cat-fact-img">
+              <p id="cat-fact-text">...</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+    
+  
+
