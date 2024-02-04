@@ -55,6 +55,8 @@ function displaySearchResults_DynamicHTML(data, flag) {
 
 //the function inserts the required number of stars into the html element
 function addStarDynamicToElement(htmlElement, noStars) {
+    // cleaning stars before adding
+    htmlElement.empty();
     for (let i = 0; i < noStars; i++) {
         //creates an img element
         let starObj = document.createElement('img');
