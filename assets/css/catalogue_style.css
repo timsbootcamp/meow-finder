@@ -112,6 +112,10 @@ h6 {
     color: var(--orange);
 }
 
+.modal-body img {
+    padding-bottom: 50px;
+}
+
 /*Catalogue Cards*/
 #catalogue {
     margin: 150px 250px;

@@ -17,11 +17,12 @@
 
       <label class="logo"><img src="./assets/images/head-y logo.png"></label>
       <ul>
-        <li><a type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="./assets/images/icon1.png"></label></a></li>
+        <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="./assets/images/icon1.png"></label></a></li>
         <li><a href = "search.html">Search</a></li>
         <li><a href = "catalogue.html">Catalogue</a></li>
       </ul>
 
+      <!--Cat Fact Modal Form-->
       <div id="modal-cat-fact">
         <div class="modal fade" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -32,11 +33,28 @@
               </div>
               <div class="modal-body">
                 <img id="cat-fact-img">
-                <p id="cat-fact-text">...</p>
+                <p id="cat-fact-text"></p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Error Modal Form-->
+      <div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="error-message" class="modal-body">
+            </div>
+            <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
