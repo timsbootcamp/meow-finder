@@ -1,7 +1,4 @@
 //'api-thecat.js' holds all Javascript related to accessing 'theCatAPI'
-const p = document.querySelector('#fact');
-const img = document.querySelector('#main-image');
-
 const apiKey_TheCatAPI = "live_lu84yq93RYo14uTkB0E6v8sUCAVLkUuGhJ42BQJ9o4gEr1gBOa6nYPsks0QBPsXn";
 const baseUrl_TheCatAPI = `https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1`;
 
@@ -17,40 +14,50 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-//functions for fact
-
-//function that inserts a fact about a cat into HTML tag p
-function updateHTML_RandomCatFact(fact) {
-  p.textContent = fact;
+//getting a random cat using API
+function getRandomCat() {
+  return new Promise((resolve, reject) => {
+    fetch(baseUrl_TheCatAPI, requestOptions)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        resolve(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        reject(error);
+      });
+  });
 }
 
-//getting a fact about a cat using API
-function getRandomCatFact() {
-  fetch(baseUrl_TheCatAPI, requestOptions)
-    .then(response => response.json())
-    .then(result => updateHTML_RandomCatFact(result[0].breeds[0].description))
-    .catch(error => console.log('error', error));
+// asynchronous function that shows the cat
+async function ShowRandomCat() {
+  try {
+    // clearing old pictures and descriptions
+    $("#cat-fact-text").html("");
+    $('#cat-fact-img').attr('src', "");
+
+    // write a random cat into the cat variable from a function that returns a random cat
+    let cat = await getRandomCat();
+
+    $("#cat-fact-text").html(cat[0].breeds[0].description);
+    $('#cat-fact-img').attr('src', cat[0].url)
+      .attr('width', '100')  // Adjust to the desired width
+      .attr('height', 'auto');
+
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
 }
 
-//functions for pictures
-
-//function that inserts a cat image into HTML tag img
-function updateHTML_RandomCatImage(linkImage) {
-  img.src = linkImage;
-  img.alt = "cat";
-  //to clarify, perhaps you need to move this property to css
-  img.width = 250;
-}
-
-//getting image a cat using API
-function getRandomCatImage() {
-  fetch(baseUrl_TheCatAPI, requestOptions)
-    .then(response => response.json())
-    .then(result => updateHTML_RandomCatImage(result[0].url))
-    .catch(error => console.log('error', error));
-}
-
-//call the function to get a fact about the cat
-getRandomCatImage()
-//call the function to get the image of a cat
-getRandomCatFact()
+// binding to a button when pressed
+$("#randomCatFact").on("click", function (event) {
+  event.preventDefault();
+  // call the function show a random cat
+  ShowRandomCat();
+});
