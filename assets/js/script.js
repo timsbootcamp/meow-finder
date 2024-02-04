@@ -1,9 +1,11 @@
 // Constant for key for local storage
 const localStorageKey_meowFinder= "meow-finder";
 
-
 //location of the picture star
 const imageStar = "./assets/images/star.png";
+
+// Link to meow sound file
+const soundFile_Meow = "assets/sfx/meow01.mp3";
 
 
 // Dynamically populate in HTML - this function is shared between api-ninja.js and catalogue.js
@@ -62,3 +64,11 @@ function addStarDynamicToElement(htmlElement, noStars) {
         htmlElement.append(starObj);
     }
 }
+
+
+// Play sound file (url is passed to function)
+function playSoundFile(soundFileUrl) {
+    var audio = new Audio(soundFileUrl);
+    audio.play();
+}
+
