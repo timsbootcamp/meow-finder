@@ -8,24 +8,20 @@ $("#search").on("click", function (event) {
 })
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-
-//   const catBreeds = [
-//     'Abyssinian', 'Aegean', 'American Bobtail', 'American Curl', 'American Shorthair',
-//     'American Wirehair', 'Aphrodite Giant', 'Arabian Mau', 'Asian', 'Australian Mist',
-//     'Balinese', 'Bambino', 'Bengal Cats', 'Birman', 'Bombay', 'Brazilian Shorthair',
-//     'British Longhair', 'British Shorthair', 'Burmese', 'Burmilla'
-//   ];
-
-//   const catBreedDropdown = document.getElementById('catBreedDropdown');
-//   catBreeds.forEach(breed => {
-//     const option = document.createElement('option');
-//     option.value = breed;
-//     option.text = breed;
-//     catBreedDropdown.appendChild(option);
-//   });
-// });
-
+// This clears all input fields to blank
+$("#clear").on("click", function (event) {
+  event.preventDefault(); //clears the list of found cats
+  $("#catalogue-cards").empty(); //clears search categories
+  $("#id_NameCatBreed").val("");
+  $("#id_MinWeight").val("");
+  $("#id_MaxWeight").val("");
+  $("#id_MinLifeExpectancy").val("");
+  $("#id_MaxLifeExpectancy").val("");
+  $("#id_FamilyFriendly").prop("checked", false);
+  $("#id_Playfulness").prop("checked", false);
+  $("#id_FriendlyWithOtherPets").prop("checked", false);
+  $("#id_ChildrenFriendly").prop("checked", false);
+});
 
 
 // Event Listemer and wait for DOMContentLoaded event ie. when initial HTML has loaded
