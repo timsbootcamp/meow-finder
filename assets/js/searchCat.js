@@ -8,6 +8,26 @@ $("#search").on("click", function (event) {
 })
 
 
+// document.addEventListener('DOMContentLoaded', function() {
+
+//   const catBreeds = [
+//     'Abyssinian', 'Aegean', 'American Bobtail', 'American Curl', 'American Shorthair',
+//     'American Wirehair', 'Aphrodite Giant', 'Arabian Mau', 'Asian', 'Australian Mist',
+//     'Balinese', 'Bambino', 'Bengal Cats', 'Birman', 'Bombay', 'Brazilian Shorthair',
+//     'British Longhair', 'British Shorthair', 'Burmese', 'Burmilla'
+//   ];
+
+//   const catBreedDropdown = document.getElementById('catBreedDropdown');
+//   catBreeds.forEach(breed => {
+//     const option = document.createElement('option');
+//     option.value = breed;
+//     option.text = breed;
+//     catBreedDropdown.appendChild(option);
+//   });
+// });
+
+
+
 // Event Listemer and wait for DOMContentLoaded event ie. when initial HTML has loaded
 document.addEventListener('DOMContentLoaded', function() {
      
@@ -51,6 +71,18 @@ document.addEventListener('DOMContentLoaded', function() {
           $("#id_ChildrenFriendly").prop("checked", false);;   
         }
       }   
+      
+
+
+    // Populate the dropdown with cat breeds
+    const catBreedDropdown = document.getElementById('id_NameCatBreed');
+    catBreeds.forEach(breed => {
+      const option = document.createElement('option');
+      option.value = breed;
+      option.text = breed;
+      catBreedDropdown.appendChild(option);
+    });
+
 })  
 
 // This function takes as parameters : the data returned from the API and the user search filtering parameters
