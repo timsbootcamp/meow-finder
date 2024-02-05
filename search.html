@@ -15,7 +15,7 @@
     <header class="navbar">
       <label class="logo"><img src="assets/images/paw_nav.png"></label>
       <ul>
-  <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
+        <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
         <li><a href = "index.html">Home</a></li></lil>
         <li><a href = "search.html">Search</a></li>
         <li><a href = "catalogue.html">Catalogue</a></li>
@@ -62,96 +62,106 @@
       </div>
     </div>
 
+    <main>
     <div class="container mt-5">
-      <main>
-          <!-- Name of Cat Breed -->
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="id_NameCatBreed">Name of Cat Breed:</label>
-              <input
-                type="text"
-                class="form-control"
-                id="id_NameCatBreed"
-                name="nameCatBreed" 
-                placeholder="Enter name of cat breed"
-                maxlength="100"
-                autocomplete="on" />
-            </div>
-          </div>
+      <!-- Name of Cat Breed -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="id_NameCatBreed">Name of Cat Breed:</label>
+          <input
+          type="text"
+          class="form-control"
+          id="id_NameCatBreed"
+          name="nameCatBreed" 
+          placeholder="Enter name of cat breed"
+          maxlength="100"
+          autocomplete="on"/>
+        </div>
+      </div>
 
-          <!-- Min Weight and Max Weight -->
-          <div class="row">
-            <div class="form-group col">
-              <label for="id_MinWeight">Min Weight (kg):</label>
-              <input type="number" class="form-control" id="id_MinWeight" name="minWeight" min="1" max="30"/>
-              <span class="unit"></span>
-            </div>
-
-            <div class="col">
-              <label for="id_MaxWeight">Max Weight (kg):</label>
-              <input type="number" class="form-control" id="id_MaxWeight" name="maxWeight" min="1" max="30"/>
-              <span class="unit"></span>
-            </div>
-          </div>
-
-          <!-- Min Life Expectancy and Max Life Expectancy -->
-          <div class="row">
-            <div class="form-group col">
-              <label for="id_MinLifeExpectancy">Min Life Expectancy:</label>
-              <input type="number" class="form-control" id="id_MinLifeExpectancy" name="minLifeExpectancy" min="1" max="30"/>
-              <span class="placeholder"></span>
-            </div>
-
-            <div class="col">
-              <label for="id_MaxLifeExpectancy">Max Life Expectancy:</label>
-              <input type="number" class="form-control" id="id_MaxLifeExpectancy" name="maxLifeExpectancy" min="1" max="30"/>
-              <span class="placeholder"></span>
-            </div>
-          </div>
-
-          <!-- Checkboxes -->
-          <div id="checkboxes">
-          <div class="form-check form-check-inline">
-            <label class="form-check-label" for="id_FamilyFriendly">Family Friendly?</label>
-            <input class="form-check-input" type="checkbox" id="id_FamilyFriendly" name="familyFriendly" value="1">
-          </div>
-          <div class="form-check form-check-inline">
-            <label class="form-check-label" for="id_Playfulness">Playfulness?</label>
-            <input class="form-check-input" type="checkbox" id="id_Playfulness" name="playfulness" value="1">
-          </div>
-          <div class="form-check form-check-inline">
-            <label class="form-check-label" for="id_FriendlyWithOtherPets">Friendly with Other Pets?</label>
-            <input class="form-check-input" type="checkbox" id="id_FriendlyWithOtherPets" name="friendlyWithOtherPets" value="1">
-          </div>
-          <div class="form-check form-check-inline">
-            <label class="form-check-label" for="id_ChildrenFriendly">Children Friendly?</label>
-            <input class="form-check-input" type="checkbox" id="id_ChildrenFriendly" name="childrenFriendly" value="1">
-          </div>
+      <!-- Min Weight and Max Weight -->
+      <div class="row">
+        <div class="form-group col">
+          <label for="id_MinWeight">Min Weight (kg):</label>
+          <input type="number" class="form-control" id="id_MinWeight" name="minWeight" min="1" max="30"/>
+          <span class="unit"></span>
         </div>
 
-          <!-- Search and Clear buttons -->
-          <div class="form-row text-center">
-            <div class="form-group col-md-12 mt-3">
-              <button id="search" type="submit" class="btn btn-secondary">
-                Search
-              </button>
-            </div>
-        
-            <div class="form-group col-md-12 mt-3">
-              <button id="clear" type="reset" class="btn btn-secondary">
-                Clear Results
-              </button>
-            </div>
-          </div>
-          </main>
+        <div class="col">
+          <label for="id_MaxWeight">Max Weight (kg):</label>
+          <input type="number" class="form-control" id="id_MaxWeight" name="maxWeight" min="1" max="30"/>
+          <span class="unit"></span>
+        </div>
+      </div>
+
+      <!-- Min Life Expectancy and Max Life Expectancy -->
+      <div class="row">
+        <div class="form-group col">
+          <label for="id_MinLifeExpectancy">Min Life Expectancy:</label>
+          <input type="number" class="form-control" id="id_MinLifeExpectancy" name="minLifeExpectancy" min="1" max="30"/>
+          <span class="placeholder"></span>
+        </div>
+
+        <div class="col">
+          <label for="id_MaxLifeExpectancy">Max Life Expectancy:</label>
+          <input type="number" class="form-control" id="id_MaxLifeExpectancy" name="maxLifeExpectancy" min="1" max="30"/>
+          <span class="placeholder"></span>
+        </div>
+      </div>
+
+      <!-- Checkboxes -->
+      <div id="checkboxes">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for="id_FamilyFriendly">Family Friendly?</label>
+          <input class="form-check-input" type="checkbox" id="id_FamilyFriendly" name="familyFriendly" value="1">
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for="id_Playfulness">Playfulness?</label>
+          <input class="form-check-input" type="checkbox" id="id_Playfulness" name="playfulness" value="1">
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for="id_FriendlyWithOtherPets">Friendly with Other Pets?</label>
+          <input class="form-check-input" type="checkbox" id="id_FriendlyWithOtherPets" name="friendlyWithOtherPets" value="1">
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for="id_ChildrenFriendly">Children Friendly?</label>
+          <input class="form-check-input" type="checkbox" id="id_ChildrenFriendly" name="childrenFriendly" value="1">
+        </div>
+      </div>
+    </div>
+
+    <!-- Search and Clear buttons -->
+      <div class="form-row text-center">
+        <div class="form-group col-md-12 mt-3">
+          <button id="search" type="submit" class="btn btn-secondary">
+            Search
+          </button>
+        </div>
+        <div class="form-group col-md-12 mt-3">
+          <button id="clear" type="reset" class="btn btn-secondary">
+            Clear Results
+          </button>
+        </div>
+      </div>
+    </main>
         
     <!--Search results container-->
     <div id="no-cat-results"></div>
+    
     <!-- Result Cards -->
-      <div id="results">
-        <div id="catalogue-cards" class="row row-cols-1 row-cols-md-3 g-5">
-        </div>
+    <div id="results">
+      <div id="catalogue-cards" class="row row-cols-1 row-cols-md-3 g-5">
       </div>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="https://www.instagram.com/explore/tags/cat/" target="_blank"><img src="assets/images/instagram_icon.png"></a></li>
+        <li><a href="https://twitter.com/hashtag/cat?src=hashtag_click" target="_blank"><img src="assets/images/twitter_icon.png"></a></li>
+        <li><a href="https://www.pinterest.co.uk/search/pins/?q=cat&rs=typed" target="_blank"><img src="assets/images/pinterest_icon.png"></a></li>
+      </ul>
+      <p>&copy; 2023 Meowfinder</p> 
+    </footer>
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
