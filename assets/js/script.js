@@ -8,35 +8,42 @@ const imageStar = "./assets/images/star.png";
 const soundFile_Meow = "assets/sfx/meow01.mp3";
 
 
-// Dynamically populate in HTML - this function is shared between api-ninja.js and catalogue.js
-function displaySearchResults_DynamicHTML(data, flag) {
-    
-    playSoundFile(soundFile_Meow);
+function displaySearchResults_DynamicHTML(data, viaSearchPage) {
 
-    // Initalise Search Results
-    $(".searchResults").empty("");
-    
     let len = Object.entries(data).length
 
-    if (flag) {
-        // Initialise all boxes to blank
-        len=Object.entries(data).length;
-        for (var i = 0; i <= 19; i++) {
-            let imageContainer = $(`#cat-breed${i + 1}-image`);
-            imageContainer.attr('src', "");
-            imageContainer.attr('alt', '');
-            $(`#cat-breed${i+1}`).addClass("hide");
-        }
+    if (viaSearchPage){
+        // Play Sound file when only searching
+        playSoundFile(soundFile_Meow);
+        $("#no-cat-results").text("The search returned " + len + " cats that match the specified criteria");
     }
 
-    for (var i = 0; i <= len - 1; i++) {
+    $('#catalogue-cards').empty("")
+    var catalogueCards = $('#catalogue-cards');
+
+
+    for (var i = 0; i <= len - 1; i++) {      
+        var catalogueCards = document.getElementById('catalogue-cards');
+        var cardElement = createCatCard(i+1)
+        catalogueCards.appendChild(cardElement);
+        
         $(`#cat-breed-title${i + 1}`).text(data[i].name + " (" + data[i].origin + ")");
         $(`#playfulness-trait${i + 1}`).text("Playfulness");
         $(`#child-friendly-trait${i + 1}`).text("Child-Friendly");
         $(`#family-friendly-trait${i + 1}`).text("Family-Friendly");
         $(`#pet-friendly-trait${i + 1}`).text("Pet-Friendly");
+        $(`#weight-trait${i + 1}`).text("Weight");
+        $(`#life-traits${i + 1}`).text("Life Expectancy");
 
-        // Handling image 
+        $(`#min-weight-result${i + 1}`).text(`${data[i].min_weight}kg to `);
+        $(`#max-weight-result${i + 1}`).text(`${data[i].max_weight}kg`);
+
+        $(`#min-life-result${i + 1}`).text(`${data[i].min_life_expectancy} to `);
+        $(`#max-life-result${i + 1}`).text(`${data[i].max_life_expectancy}`);
+        
+        //min-life-result        
+
+        // // Handling image 
         let imageContainer = $(`#cat-breed${i + 1}-image`);
         imageContainer.attr('src', data[i].image_link);
         imageContainer.attr('alt', 'Cat Breed');
@@ -46,15 +53,14 @@ function displaySearchResults_DynamicHTML(data, flag) {
         addStarDynamicToElement($(`#pet-friendly-stars${i + 1}`), data[i].other_pets_friendly);
         addStarDynamicToElement($(`#child-friendly-stars${i + 1}`), data[i].children_friendly);
         addStarDynamicToElement($(`#family-friendly-stars${i + 1}`), data[i].family_friendly);
-
-        // Remove hide class so image is visible
-        $(`#cat-breed${i+1}`).removeClass("hide");
     }
 };
 
 
 //the function inserts the required number of stars into the html element
 function addStarDynamicToElement(htmlElement, noStars) {
+    // cleaning stars before adding
+    htmlElement.empty();
     for (let i = 0; i < noStars; i++) {
         //creates an img element
         let starObj = document.createElement('img');
@@ -68,9 +74,76 @@ function addStarDynamicToElement(htmlElement, noStars) {
 }
 
 
-// Play sound file (url is passed to function)
+function createCatCard(i) {
+    var cardDiv = document.createElement("div");
+    cardDiv.classList.add("col");
+
+    cardDiv.innerHTML = `
+    <div class="card h-100">
+        <img id="cat-breed${i}-image" class="card-img-top">
+        <div class="card-body">
+            <h5 id="cat-breed-title${i}" class="card-title"></h5>
+            <div class="card-text">
+                <div class="description">
+                    <p id="weight-trait${i}" class="trait"></p> 
+                    <div class="results"><p id="min-weight-result${i}">-</p><p></p><p id="max-weight-result${i}"></div> 
+                </div>
+                <div class="description">
+                    <p id="life-traits${i}" class="trait"></p> 
+                    <div class="results"><p id="min-life-result${i}">-</p><p></p><p id="max-life-result${i}"></div> 
+                </div>
+                <div class="description">
+                    <p id="playfulness-trait${i}" class="trait"></p> 
+                    <p id="playfulness-stars${i}" class="stars"></p> 
+                </div>
+                <div class="description">
+                    <p id="pet-friendly-trait${i}" class="trait"></p> 
+                    <p id="pet-friendly-stars${i}" class="stars"></p> 
+                </div>
+                <div class="description">
+                    <p id="child-friendly-trait${i}" class="trait"></p> 
+                    <p id="child-friendly-stars${i}" class="stars"></p> 
+                </div>
+                <div class="description">
+                    <p id="family-friendly-trait${i}" class="trait"></p> 
+                    <p id="family-friendly-stars${i}" class="stars"></p> 
+                </div>                
+            </div>
+        </div>
+    </div>`;
+
+    return cardDiv;
+}
+
+
+// Asynchronous function to accessing data from Ninja API
+async function fetchDataFrom_NinjaAPI() {
+    try {
+  
+      // Wait until below statement runs and gets data populated
+      let data = await getListOfAllCats_NinjaAPI();
+      // 'data' variable is now populated with data
+  
+      // Read form input fields from HTML page and return object
+      let filtersSearch = readSearchFilterFieldsfromForm();
+
+      writeToLocalStorage(filtersSearch);
+
+      // The data returned from the API and the user search filtering parameters are passed
+      let filteredData =  filterRecords(data, filtersSearch)
+  
+      // Display data
+      displaySearchResults_DynamicHTML(filteredData, true);
+  
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+
+
+  // Play sound file (url is passed to function)
 function playSoundFile(soundFileUrl) {
     var audio = new Audio(soundFileUrl);
     audio.play();
 }
-

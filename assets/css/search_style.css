@@ -1,5 +1,5 @@
 :root {
-    --orange: #F78460;
+    --orange: rgb(255, 122, 80);
     --cream: #FFEBD4;
     --yellow: #FCFF75;
 }
@@ -10,27 +10,16 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    font-size: large;
-    font-weight: 200;
     margin: 0;
     padding: 0;
-    background-color: var(--cream);
+    background-color: rgb(255, 122, 80);
     min-height: 100vh;
 }
 
 main {
     flex: 1;
-}
-
-header {
+    padding: 50px;
     background-color: var(--orange);
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 h1 {
@@ -44,33 +33,38 @@ h1 {
 }
 
 .btn-secondary {
-    color: var(--cream);
-    background-color: var(--orange);
-    border-color: var(--orange) !important;
+    color: var(--orange);
+    background-color: var(--yellow);
+    border-color: var(--yellow) !important;
 }
 
 button:hover {
     color: #1A1A1A; 
     font-weight: bold;
-    background-color: var(--yellow);
+    background-color: var(--orange);
     border: var(--yellow);
 }
 
 .btn-secondary:hover {
-    color: var(--orange); 
+    color: var(--yellow); 
     font-weight: bold;
-    background-color: var(--yellow);
-    box-shadow: 0px 4px 8px var(--orange) !important;
+    background-color: var(--orange);
+    box-shadow: 0px 4px 8px var(--yellow) !important;
 }
 
 /*Result cards*/
+#no-cat-results{
+    text-align: center;
+    color: var(--cream);
+    padding-bottom: 50px;
+}
 
 #results {
     text-align: center;
 }
 
 #results h2 {
-    color: var(--yellow) ;
+    color: var(--orange) ;
     text-decoration: underline ;
     font-size: 25px ;
     padding-bottom: 25px ;
@@ -93,8 +87,8 @@ button:hover {
 }
 
 .card {
-    background-color: var(--orange) !important;
-    color: var(--cream) !important;
+    background-color: var(--cream) !important;
+    color: var(--orange) !important;
 }
 
 .card-title {
@@ -104,6 +98,14 @@ button:hover {
 .description {
     display: flex ;
     justify-content: space-between ;
+}
+
+.results {
+    padding-bottom: 25px;
+}
+
+.results p {
+    display: inline;
 }
 
 .form-control {

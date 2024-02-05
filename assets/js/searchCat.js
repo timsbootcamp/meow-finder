@@ -3,16 +3,18 @@
 
 // When the element with the ID "search" is clicked, the below function will run
 $("#search").on("click", function (event) {
-    event.preventDefault();
-  
-    let data = fetchDataFrom_NinjaAPI();
+    event.preventDefault(); 
+    fetchDataFrom_NinjaAPI();
 })
 
 
+// Event Listemer and wait for DOMContentLoaded event ie. when initial HTML has loaded
 document.addEventListener('DOMContentLoaded', function() {
-    
+     
+   // Read from Local Storage
     let settingsData = readFromLocalStorage();
    
+    // Load Search form with criteria from last search execution
     if (settingsData) {
         $("#id_NameCatBreed").val(settingsData.NameCatBreed);
         $("#id_MinWeight").val(settingsData.MinWeight);
@@ -48,10 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         else {
           $("#id_ChildrenFriendly").prop("checked", false);;   
         }
-      }
-
-    
-    console.log("");
+      }   
 })  
 
 // This function takes as parameters : the data returned from the API and the user search filtering parameters

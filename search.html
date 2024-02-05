@@ -1,650 +1,166 @@
-<!--Search page-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/search_style.css" /> <!--Check file directory-->
-    <title>Cat Image Containers</title>
+    <link rel="stylesheet" href="./assets/css/search_style.css"/>
+    <link rel="stylesheet" href="./assets/css/all_style.css">
+    <title>Search - Meow Finder</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
   </head>
   <body>
-    <header>
-      <nav>
-        <h1 class="ml-5">Meow Finder</h1>
-      </nav>
-    </header>
 
-    <div class="container mt-5">
-      <main>
+  <!-- NAVBAR-BEGIN -->
+  <header class="navbar">
+    <label class="logo"><img src="assets/images/paw_nav.png"></label>
+    <ul>
+      <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
+      <li><a href = "index.html">Home</a></li></lil>
+      <li><a href = "search.html">Search</a></li>
+      <li><a href = "catalogue.html">Catalogue</a></li>
+      <li><a href = "about.html">About</a></li>
+    </ul>
 
-<!--Dropdown menu search form-->
-<div class="form-row">
-  <div class="form-group col-md-6">
-    <label for="catBreedDropdown">Name of Cat Breed:</label>
-    <select class="form-control" id="catBreedDropdown" name="nameCatBreed">
-      <!-- Options will be dynamically added by JavaScript -->
-    </select>
-  </div>
-</div>
-
-<!--Js dropdown menu-->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    
-    const catBreeds = [
-      'Abyssinian', 'Aegean', 'American Bobtail', 'American Curl', 'American Shorthair',
-      'American Wirehair', 'Aphrodite Giant', 'Arabian Mau', 'Asian', 'Australian Mist',
-      'Balinese', 'Bambino', 'Bengal Cats', 'Birman', 'Bombay', 'Brazilian Shorthair',
-      'British Longhair', 'British Shorthair', 'Burmese', 'Burmilla'
-    ];
-
-    const catBreedDropdown = document.getElementById('catBreedDropdown');
-    catBreeds.forEach(breed => {
-      const option = document.createElement('option');
-      option.value = breed;
-      option.text = breed;
-      catBreedDropdown.appendChild(option);
-    });
-  });
-</script>
-
-          <!-- Min Weight and Max Weight -->
-          <div class="row">
-            <div class="form-group col">
-              <label for="id_MinWeight">Min Weight (kg):</label> <!--Modified min and max-->
-              <input type="number" class="form-control" id="id_MinWeight" name="minWeight" min="1" max="30"/>
-              <span class="unit"></span>
+    <div id="modal-cat-fact">
+      <div class="modal fade" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Cat Fact!</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
-            <div class="col">
-              <label for="id_MaxWeight">Max Weight (kg):</label> <!--Modified min and max-->
-              <input type="number" class="form-control" id="id_MaxWeight" name="maxWeight" min="1" max="30"/>
-              <span class="unit"></span>
+            <div class="modal-body">
+              <img id="cat-fact-img">
+              <p id="cat-fact-text"></p>
             </div>
-          </div>
-
-          <!-- Min Life Expectancy and Max Life Expectancy -->
-          <div class="row">
-            <div class="form-group col">
-              <label for="id_MinLifeExpectancy">Min Life Expectancy:</label> <!--Modified min and max-->
-              <input type="number" class="form-control" id="id_MinLifeExpectancy" name="minLifeExpectancy" min="1" max="30"/>
-              <span class="placeholder"></span>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
-
-            <div class="col">
-              <label for="id_MaxLifeExpectancy">Max Life Expectancy:</label> 
-              <input type="number" class="form-control" id="id_MaxLifeExpectancy" name="maxLifeExpectancy" min="1" max="30" />
-              <span class="placeholder"></span>
-            </div>
-          </div>
-
-          <!-- Checkboxes -->
-          <div id="checkboxes">
-          <div class="form-check form-check-inline">
-            <label class="form-check-label" for="id_FamilyFriendly">Family Friendly?</label>
-            <input class="form-check-input" type="checkbox" id="id_FamilyFriendly" name="familyFriendly" value="1">
-          </div>
-          <div class="form-check form-check-inline">
-            <label class="form-check-label" for="id_Playfulness">Playfulness?</label>
-            <input class="form-check-input" type="checkbox" id="id_Playfulness" name="playfulness" value="1">
-          </div>
-          <div class="form-check form-check-inline">
-            <label class="form-check-label" for="id_FriendlyWithOtherPets">Friendly with Other Pets?</label>
-            <input class="form-check-input" type="checkbox" id="id_FriendlyWithOtherPets" name="friendlyWithOtherPets" value="1">
-          </div>
-          <div class="form-check form-check-inline">
-            <label class="form-check-label" for="id_ChildrenFriendly">Children Friendly?</label>
-            <input class="form-check-input" type="checkbox" id="id_ChildrenFriendly" name="childrenFriendly" value="1">
           </div>
         </div>
-
-          <!-- Search and Clear buttons -->
-          <div class="form-row text-center">
-            <div class="form-group col-md-12 mt-3">
-              <button id="search" type="submit" class="btn btn-secondary">
-                Search
-              </button>
-            </div>
-        
-            <div class="form-group col-md-12 mt-3">
-              <button id="clear" type="reset" class="btn btn-secondary">
-                Clear Results
-              </button>
-            </div>
-          </div>
-        
-        <!--Search results container-->
-        <div class="searchResults"></div>
-      </main>
+      </div>
     </div>
-      <!-- Result Cards -->
-        <div id="results">
-          <div id="catalogue-cards" class="row row-cols-1 row-cols-md-3 g-5">
-          
-            <div id="cat-breed1" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed1-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title1" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait1" class="trait"></p> 
-                      <p id="playfulness-stars1" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait1" class="trait"></p> 
-                      <p id="pet-friendly-stars1" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait1" class="trait"></p> 
-                      <p id="child-friendly-stars1" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait1" class="trait"></p> 
-                      <p id="family-friendly-stars1" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed2" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed2-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title2" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait2" class="trait"></p> 
-                      <p id="playfulness-stars2" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait2" class="trait"></p> 
-                      <p id="pet-friendly-stars2" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait2" class="trait"></p> 
-                      <p id="child-friendly-stars2" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait2" class="trait"></p> 
-                      <p id="family-friendly-stars2" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed3" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed3-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title3" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait3" class="trait"></p> 
-                      <p id="playfulness-stars3" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait3" class="trait"></p> 
-                      <p id="pet-friendly-stars3" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait3" class="trait"></p> 
-                      <p id="child-friendly-stars3" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait3" class="trait"></p> 
-                      <p id="family-friendly-stars3" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed4" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed4-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title4" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait4" class="trait"></p> 
-                      <p id="playfulness-stars4" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait4" class="trait"></p> 
-                      <p id="pet-friendly-stars4" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait4" class="trait"></p> 
-                      <p id="child-friendly-stars4" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait4" class="trait"></p> 
-                      <p id="family-friendly-stars4" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed5" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed5-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title5" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait5" class="trait"></p> 
-                      <p id="playfulness-stars5" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait5" class="trait"></p> 
-                      <p id="pet-friendly-stars5" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait5" class="trait"></p> 
-                      <p id="child-friendly-stars5" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait5" class="trait"></p> 
-                      <p id="family-friendly-stars5" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed6" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed6-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title6" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait6" class="trait"></p> 
-                      <p id="playfulness-stars6" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait6" class="trait"></p> 
-                      <p id="pet-friendly-stars6" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait6" class="trait"></p> 
-                      <p id="child-friendly-stars6" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait6" class="trait"></p> 
-                      <p id="family-friendly-stars6" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed7" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed7-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title7" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait7" class="trait"></p> 
-                      <p id="playfulness-stars7" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait7" class="trait"></p> 
-                      <p id="pet-friendly-stars7" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait7" class="trait"></p> 
-                      <p id="child-friendly-stars7" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait7" class="trait"></p> 
-                      <p id="family-friendly-stars7" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed8" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed8-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title8" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait8" class="trait"></p> 
-                      <p id="playfulness-stars8" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait8" class="trait"></p> 
-                      <p id="pet-friendly-stars8" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait8" class="trait"></p> 
-                      <p id="child-friendly-stars8" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait8" class="trait"></p> 
-                      <p id="family-friendly-stars8" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed9" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed9-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title9" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait9" class="trait"></p> 
-                      <p id="playfulness-stars9" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait9" class="trait"></p> 
-                      <p id="pet-friendly-stars9" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait9" class="trait"></p> 
-                      <p id="child-friendly-stars9" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait9" class="trait"></p> 
-                      <p id="family-friendly-stars9" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed10" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed10-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title10" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait10" class="trait"></p> 
-                      <p id="playfulness-stars10" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait10" class="trait"></p> 
-                      <p id="pet-friendly-stars10" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait10" class="trait"></p> 
-                      <p id="child-friendly-stars10" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait10" class="trait"></p> 
-                      <p id="family-friendly-stars10" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed11" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed11-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title11" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait11" class="trait"></p> 
-                      <p id="playfulness-stars11" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait11" class="trait"></p> 
-                      <p id="pet-friendly-stars11" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait11" class="trait"></p> 
-                      <p id="child-friendly-stars11" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait11" class="trait"></p> 
-                      <p id="family-friendly-stars11" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed12" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed12-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title12" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait12" class="trait"></p> 
-                      <p id="playfulness-stars12" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait12" class="trait"></p> 
-                      <p id="pet-friendly-stars12" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait12" class="trait"></p> 
-                      <p id="child-friendly-stars12" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait12" class="trait"></p> 
-                      <p id="family-friendly-stars12" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed13" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed13-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title13" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait13" class="trait"></p> 
-                      <p id="playfulness-stars13" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait13" class="trait"></p> 
-                      <p id="pet-friendly-stars13" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait13" class="trait"></p> 
-                      <p id="child-friendly-stars13" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait13" class="trait"></p> 
-                      <p id="family-friendly-stars13" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed14" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed14-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title14" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait14" class="trait"></p> 
-                      <p id="playfulness-stars14" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait14" class="trait"></p> 
-                      <p id="pet-friendly-stars14" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait14" class="trait"></p> 
-                      <p id="child-friendly-stars14" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait14" class="trait"></p> 
-                      <p id="family-friendly-stars14" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed15" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed15-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title15" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait15" class="trait"></p> 
-                      <p id="playfulness-stars15" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait15" class="trait"></p> 
-                      <p id="pet-friendly-stars15" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait15" class="trait"></p> 
-                      <p id="child-friendly-stars15" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait15" class="trait"></p> 
-                      <p id="family-friendly-stars15" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed16" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed16-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title16" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait16" class="trait"></p> 
-                      <p id="playfulness-stars16" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait16" class="trait"></p> 
-                      <p id="pet-friendly-stars16" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait16" class="trait"></p> 
-                      <p id="child-friendly-stars16" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait16" class="trait"></p> 
-                      <p id="family-friendly-stars16" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed17" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed17-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title17" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait17" class="trait"></p> 
-                      <p id="playfulness-stars17" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait17" class="trait"></p> 
-                      <p id="pet-friendly-stars17" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait17" class="trait"></p> 
-                      <p id="child-friendly-stars17" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait17" class="trait"></p> 
-                      <p id="family-friendly-stars17" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed18" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed18-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title18" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait18" class="trait"></p> 
-                      <p id="playfulness-stars18" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait18" class="trait"></p> 
-                      <p id="pet-friendly-stars18" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait18" class="trait"></p> 
-                      <p id="child-friendly-stars18" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait18" class="trait"></p> 
-                      <p id="family-friendly-stars18" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed19" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed19-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title19" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait19" class="trait"></p> 
-                      <p id="playfulness-stars19" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait19" class="trait"></p> 
-                      <p id="pet-friendly-stars19" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait19" class="trait"></p> 
-                      <p id="child-friendly-stars19" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait19" class="trait"></p> 
-                      <p id="family-friendly-stars19" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div id="cat-breed20" class="col hide">
-              <div class="card h-100">
-                <img id="cat-breed20-image" class="card-img-top">
-                <div class="card-body">
-                  <h5 id="cat-breed-title20" class="card-title"></h5>
-                  <div class="card-text">
-                    <div class="description">
-                      <p id="playfulness-trait20" class="trait"></p> 
-                      <p id="playfulness-stars20" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="pet-friendly-trait20" class="trait"></p> 
-                      <p id="pet-friendly-stars20" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="child-friendly-trait20" class="trait"></p> 
-                      <p id="child-friendly-stars20" class="stars"></p>
-                    </div>
-                    <div class="description">
-                      <p id="family-friendly-trait20" class="trait"></p> 
-                      <p id="family-friendly-stars20" class="stars"></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  </header>
+  <!-- NAVBAR-END -->
+
+  <!--Error Modal Form-->
+  <div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="error-message" class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <main>
+    <div class="container mt-5">
+      <!-- Name of Cat Breed -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="id_NameCatBreed">Name of Cat Breed:</label>
+          <input
+          type="text"
+          class="form-control"
+          id="id_NameCatBreed"
+          name="nameCatBreed" 
+          placeholder="Enter name of cat breed"
+          maxlength="100"
+          autocomplete="on"/>
+        </div>
+      </div>
+
+      <!-- Min Weight and Max Weight -->
+      <div class="row">
+        <div class="form-group col">
+          <label for="id_MinWeight">Min Weight (kg):</label>
+          <input type="number" class="form-control" id="id_MinWeight" name="minWeight" min="1" max="30"/>
+          <span class="unit"></span>
         </div>
 
+        <div class="col">
+          <label for="id_MaxWeight">Max Weight (kg):</label>
+          <input type="number" class="form-control" id="id_MaxWeight" name="maxWeight" min="1" max="30"/>
+          <span class="unit"></span>
+        </div>
+      </div>
+
+      <!-- Min Life Expectancy and Max Life Expectancy -->
+      <div class="row">
+        <div class="form-group col">
+          <label for="id_MinLifeExpectancy">Min Life Expectancy:</label>
+          <input type="number" class="form-control" id="id_MinLifeExpectancy" name="minLifeExpectancy" min="1" max="30"/>
+          <span class="placeholder"></span>
+        </div>
+
+        <div class="col">
+          <label for="id_MaxLifeExpectancy">Max Life Expectancy:</label>
+          <input type="number" class="form-control" id="id_MaxLifeExpectancy" name="maxLifeExpectancy" min="1" max="30"/>
+          <span class="placeholder"></span>
+        </div>
+      </div>
+
+      <!-- Checkboxes -->
+      <div id="checkboxes">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for="id_FamilyFriendly">Family Friendly?</label>
+          <input class="form-check-input" type="checkbox" id="id_FamilyFriendly" name="familyFriendly" value="1">
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for="id_Playfulness">Playfulness?</label>
+          <input class="form-check-input" type="checkbox" id="id_Playfulness" name="playfulness" value="1">
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for="id_FriendlyWithOtherPets">Friendly with Other Pets?</label>
+          <input class="form-check-input" type="checkbox" id="id_FriendlyWithOtherPets" name="friendlyWithOtherPets" value="1">
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for="id_ChildrenFriendly">Children Friendly?</label>
+          <input class="form-check-input" type="checkbox" id="id_ChildrenFriendly" name="childrenFriendly" value="1">
+        </div>
+      </div>
+    </div>
+
+    <!-- Search and Clear buttons -->
+      <div class="form-row text-center">
+        <div class="form-group col-md-12 mt-3">
+          <button id="search" type="submit" class="btn btn-secondary">
+            Search
+          </button>
+        </div>
+        <div class="form-group col-md-12 mt-3">
+          <button id="clear" type="reset" class="btn btn-secondary">
+            Clear Results
+          </button>
+        </div>
+      </div>
+    </main>
+        
+    <!--Search results container-->
+    <div id="no-cat-results"></div>
+    
+    <!-- Result Cards -->
+    <div id="results">
+      <div id="catalogue-cards" class="row row-cols-1 row-cols-md-3 g-5">
+      </div>
+    </div>
+
+    <footer>
+      <ul>
+        <li><a href="https://www.instagram.com/explore/tags/cat/" target="_blank"><img src="assets/images/instagram_icon.png"></a></li>
+        <li><a href="https://twitter.com/hashtag/cat?src=hashtag_click" target="_blank"><img src="assets/images/twitter_icon.png"></a></li>
+        <li><a href="https://www.pinterest.co.uk/search/pins/?q=cat&rs=typed" target="_blank"><img src="assets/images/pinterest_icon.png"></a></li>
+      </ul>
+      <p>&copy; 2023 Meowfinder</p> 
+    </footer>
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
