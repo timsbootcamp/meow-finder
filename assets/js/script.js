@@ -8,7 +8,7 @@ const imageStar = "./assets/images/star.png";
 const soundFile_Meow = "assets/sfx/meow01.mp3";
 
 
-function displaySearchResults_DynamicHTML(data, flag) {
+function displaySearchResults_DynamicHTML(data, viaSearchPage) {
 
     playSoundFile(soundFile_Meow);
 
@@ -16,6 +16,10 @@ function displaySearchResults_DynamicHTML(data, flag) {
 
     $('#catalogue-cards').empty("")
     var catalogueCards = $('#catalogue-cards');
+
+    if (viaSearchPage){
+        $("#no-cat-results").text("The search returned " + len + " cats that match the specified criteria");
+    }
 
     for (var i = 0; i <= len - 1; i++) {
        
