@@ -8,43 +8,61 @@
   <title>Home - Meow Finder</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/home_style.css" />
+  <link rel="stylesheet" href="./assets/css/all_style.css">
   <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
 </head>
 
 
 <body>
-  <header class="navbar">
-    <label class="logo"><img src="assets/images/paw_nav.png"></label>
-    <ul>
-<li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
-      <li><a href = "index.html">Home</a></li>
-      <li><a href = "search.html">Search</a></li>
-      <li><a href = "catalogue.html">Catalogue</a></li>
-      <li><a href = "about.html">About</a></li>
-      
-    </ul>
-    <div id="modal-cat-fact">
-      <div class="modal fade" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5">Cat Fact!</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <img id="cat-fact-img">
-              <p id="cat-fact-text">...</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <!-- NAVBAR-BEGIN -->
+    <header class="navbar">
+      <label class="logo"><img src="assets/images/paw_nav.png"></label>
+      <ul>
+        <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
+        <li><a href = "index.html">Home</a></li></lil>
+        <li><a href = "search.html">Search</a></li>
+        <li><a href = "catalogue.html">Catalogue</a></li>
+        <li><a href = "about.html">About</a></li>
+      </ul>
+  
+      <div id="modal-cat-fact">
+        <div class="modal fade" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">Cat Fact!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <img id="cat-fact-img">
+                <p id="cat-fact-text"></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
-    
+    </header>
+    <!-- NAVBAR-END -->
   
+    <!--Error Modal Form-->
+    <div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="error-message" class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- <section class="page-section" id="pictures"> -->
       <section>
@@ -87,6 +105,7 @@
     </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
 </body>
 
 </html>
