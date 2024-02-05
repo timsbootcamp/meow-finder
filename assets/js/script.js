@@ -8,19 +8,22 @@ const imageStar = "./assets/images/star.png";
 const soundFile_Meow = "assets/sfx/meow01.mp3";
 
 
-function displaySearchResults_DynamicHTML(data, flag) {
-
-    playSoundFile(soundFile_Meow);
+function displaySearchResults_DynamicHTML(data, viaSearchPage) {
 
     let len = Object.entries(data).length
+
+    if (viaSearchPage){
+        // Play Sound file when only searching
+        playSoundFile(soundFile_Meow);
+        $("#no-cat-results").text("The search returned " + len + " cats that match the specified criteria");
+    }
 
     $('#catalogue-cards').empty("")
     var catalogueCards = $('#catalogue-cards');
 
-    for (var i = 0; i <= len - 1; i++) {
-       
-        var catalogueCards = document.getElementById('catalogue-cards');
 
+    for (var i = 0; i <= len - 1; i++) {      
+        var catalogueCards = document.getElementById('catalogue-cards');
         var cardElement = createCatCard(i+1)
         catalogueCards.appendChild(cardElement);
         
@@ -42,7 +45,6 @@ function displaySearchResults_DynamicHTML(data, flag) {
         addStarDynamicToElement($(`#family-friendly-stars${i + 1}`), data[i].family_friendly);
     }
 };
-
 
 
 //the function inserts the required number of stars into the html element
@@ -95,10 +97,35 @@ function createCatCard(i) {
     return cardDiv;
 }
 
-// Play sound file (url is passed to function)
+
+// Asynchronous function to accessing data from Ninja API
+async function fetchDataFrom_NinjaAPI() {
+    try {
+  
+      // Wait until below statement runs and gets data populated
+      let data = await getListOfAllCats_NinjaAPI();
+      // 'data' variable is now populated with data
+  
+      // Read form input fields from HTML page and return object
+      let filtersSearch = readSearchFilterFieldsfromForm();
+
+      writeToLocalStorage(filtersSearch);
+
+      // The data returned from the API and the user search filtering parameters are passed
+      let filteredData =  filterRecords(data, filtersSearch)
+  
+      // Display data
+      displaySearchResults_DynamicHTML(filteredData, true);
+  
+
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+
+
+  // Play sound file (url is passed to function)
 function playSoundFile(soundFileUrl) {
     var audio = new Audio(soundFileUrl);
     audio.play();
 }
-
-
