@@ -8,6 +8,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-image: url("../images/wave-background.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
 }
 
 .navbar {

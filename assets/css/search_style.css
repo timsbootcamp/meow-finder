@@ -17,13 +17,17 @@ body {
     padding: 0;
     background-color: rgb(255, 122, 80);
     min-height: 100vh;
+    background-image: url("../images/wave-background.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
 }
 /* NAVBAR-BEGIN */
 .navbar {
     position: absolute;
     top:0px;
     width: 100vw;
-    background-color: rgb(255, 122, 80);
     height:120px;
 }
 .logo {
@@ -79,7 +83,6 @@ body {
 main {
     flex: 1;
     padding: 50px;
-    background-color: var(--orange);
 }
 
 /* header {
