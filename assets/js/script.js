@@ -8,6 +8,15 @@ const imageStar = "./assets/images/star.png";
 const soundFile_Meow = "assets/sfx/meow01.mp3";
 
 
+// Dropdown menu search form
+const catBreeds = [
+'', 'Abyssinian', 'Aegean', 'American Bobtail', 'American Curl', 'American Shorthair',
+'American Wirehair', 'Aphrodite Giant', 'Arabian Mau', 'Asian', 'Australian Mist',
+'Balinese', 'Bambino', 'Bengal Cats', 'Birman', 'Bombay', 'Brazilian Shorthair',
+'British Longhair', 'British Shorthair', 'Burmese', 'Burmilla'
+];
+
+
 function displaySearchResults_DynamicHTML(data, viaSearchPage) {
 
     let len = Object.entries(data).length
