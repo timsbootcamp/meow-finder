@@ -4,22 +4,24 @@
     --yellow: #FCFF75;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 600;
+    background-color: var(--orange);
+    background-image: url("../images/wave-background.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
 }
 
 /* NAVBAR-BEGIN */
 .navbar {
-    position: absolute;
+    position: fixed;
     top:0px;
     width: 100vw;
+    z-index: 5;
+    background-color: var(--orange);
 }
 .logo {
     left: 0px;
@@ -103,7 +105,7 @@ h6 {
 
 /*Footer*/
 footer {
-    margin-top: auto;
+    margin-top: 1050px;
 }
 
 footer ul {
@@ -124,6 +126,7 @@ footer p {
     display: flex;
     justify-content: center;
     color: rgb(252, 255, 117);
+    padding-left: 15px;
 }
 
 footer img {

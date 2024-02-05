@@ -6,12 +6,6 @@
 
 body {
     text-align: center;
-    background-color: rgb(255, 122, 80);
-    background-image: url("../images/wave-background.webp");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat;
 }
 
 /*Catalogue Cards*/
