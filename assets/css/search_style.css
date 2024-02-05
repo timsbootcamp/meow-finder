@@ -10,9 +10,6 @@
 }
 
 body {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: large;
-    font-weight: 200;
     margin: 0;
     padding: 0;
     background-color: rgb(255, 122, 80);
@@ -24,21 +21,6 @@ main {
     padding: 50px;
     background-color: var(--orange);
 }
-
-/* header {
-    background-color: var(--orange);
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
-/* h1 {
-    font-family: 'PicNic', Arial, sans-serif;
-    
-} */
 
 #checkboxes {
     text-align: center;
