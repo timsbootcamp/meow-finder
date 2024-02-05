@@ -27,8 +27,18 @@ $("#clear").on("click", function (event) {
 
 // Event Listemer and wait for DOMContentLoaded event ie. when initial HTML has loaded
 document.addEventListener('DOMContentLoaded', function() {
-     
-   // Read from Local Storage
+
+      // Populate the dropdown with cat breeds
+    const catBreedDropdown = document.getElementById('id_NameCatBreed');
+    catBreeds.forEach(breed => {
+      const option = document.createElement('option');
+      option.value = breed;
+      option.text = breed;
+      catBreedDropdown.appendChild(option);
+    });
+
+   
+    // Read from Local Storage
     let settingsData = readFromLocalStorage();
    
     // Load Search form with criteria from last search execution
@@ -69,17 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }   
       
-
-
-    // Populate the dropdown with cat breeds
-    const catBreedDropdown = document.getElementById('id_NameCatBreed');
-    catBreeds.forEach(breed => {
-      const option = document.createElement('option');
-      option.value = breed;
-      option.text = breed;
-      catBreedDropdown.appendChild(option);
-    });
-
 })  
 
 // This function takes as parameters : the data returned from the API and the user search filtering parameters
