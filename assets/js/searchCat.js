@@ -12,6 +12,7 @@ $("#search").on("click", function (event) {
 $("#clear").on("click", function (event) {
   event.preventDefault(); //clears the list of found cats
   $("#catalogue-cards").empty(); //clears search categories
+  $("#no-cat-results").empty();
   $("#id_NameCatBreed").val("");
   $("#id_MinWeight").val("");
   $("#id_MaxWeight").val("");
