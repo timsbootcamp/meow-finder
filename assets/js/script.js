@@ -32,6 +32,16 @@ function displaySearchResults_DynamicHTML(data, viaSearchPage) {
         $(`#child-friendly-trait${i + 1}`).text("Child-Friendly");
         $(`#family-friendly-trait${i + 1}`).text("Family-Friendly");
         $(`#pet-friendly-trait${i + 1}`).text("Pet-Friendly");
+        $(`#weight-trait${i + 1}`).text("Weight");
+        $(`#life-traits${i + 1}`).text("Life Expectancy");
+
+        $(`#min-weight-result${i + 1}`).text(`${data[i].min_weight}kg to `);
+        $(`#max-weight-result${i + 1}`).text(`${data[i].max_weight}kg`);
+
+        $(`#min-life-result${i + 1}`).text(`${data[i].min_life_expectancy} to `);
+        $(`#max-life-result${i + 1}`).text(`${data[i].max_life_expectancy}`);
+        
+        //min-life-result        
 
         // // Handling image 
         let imageContainer = $(`#cat-breed${i + 1}-image`);
@@ -76,11 +86,11 @@ function createCatCard(i) {
             <div class="card-text">
                 <div class="description">
                     <p id="weight-trait${i}" class="trait"></p> 
-                    <div class="results"><p id="min-weight-result${i}"></p><p>-</p><p id="max-weight-result${i}"></div> 
+                    <div class="results"><p id="min-weight-result${i}">-</p><p></p><p id="max-weight-result${i}"></div> 
                 </div>
                 <div class="description">
                     <p id="life-traits${i}" class="trait"></p> 
-                    <div class="results"><p id="min-life-result${i}"></p><p>-</p><p id="max-life-result${i}"></div> 
+                    <div class="results"><p id="min-life-result${i}">-</p><p></p><p id="max-life-result${i}"></div> 
                 </div>
                 <div class="description">
                     <p id="playfulness-trait${i}" class="trait"></p> 
