@@ -27,7 +27,6 @@ body {
     height:120px;
 }
 .logo {
-    position:fixed;
     left: 0px;
     top:10px;
     width:100px;
@@ -79,7 +78,7 @@ body {
 
 main {
     flex: 1;
-    padding:120px;
+    padding: 50px;
     background-color: var(--orange);
 }
 
@@ -125,8 +124,9 @@ button:hover {
 /*Result cards*/
 #no-cat-results{
     text-align: center;
+    color: var(--cream);
+    padding-bottom: 50px;
 }
-
 
 #results {
     text-align: center;
@@ -181,4 +181,33 @@ button:hover {
     border: 1px solid red;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/*Footer*/
+footer {
+    margin-top: auto;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+footer li {
+    padding: 10px 25px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    color: rgb(252, 255, 117);
+}
+
+footer img {
+    width: 35px;
 }
