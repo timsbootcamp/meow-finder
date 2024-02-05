@@ -163,6 +163,14 @@ h6 {
     }
 }
 
+.results {
+    padding-bottom: 25px;
+}
+
+.results p {
+    display: inline;
+}
+
 /*Footer*/
 footer {
     margin-top: auto;

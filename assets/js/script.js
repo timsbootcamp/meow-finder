@@ -75,6 +75,14 @@ function createCatCard(i) {
             <h5 id="cat-breed-title${i}" class="card-title"></h5>
             <div class="card-text">
                 <div class="description">
+                    <p id="weight-trait${i}" class="trait"></p> 
+                    <div class="results"><p id="min-weight-result${i}"></p><p>-</p><p id="max-weight-result${i}"></div> 
+                </div>
+                <div class="description">
+                    <p id="life-traits${i}" class="trait"></p> 
+                    <div class="results"><p id="min-life-result${i}"></p><p>-</p><p id="max-life-result${i}"></div> 
+                </div>
+                <div class="description">
                     <p id="playfulness-trait${i}" class="trait"></p> 
                     <p id="playfulness-stars${i}" class="stars"></p> 
                 </div>

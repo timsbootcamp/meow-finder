@@ -169,6 +169,14 @@ button:hover {
     justify-content: space-between ;
 }
 
+.results {
+    padding-bottom: 25px;
+}
+
+.results p {
+    display: inline;
+}
+
 .form-control {
     display: block;
     width: 100%;
