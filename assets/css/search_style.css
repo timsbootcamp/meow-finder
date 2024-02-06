@@ -21,6 +21,12 @@ main {
     padding: 50px;
 }
 
+h1 {
+    font-family: 'PicNic', Arial, sans-serif;
+    padding-left: 20px;
+    word-spacing: 10px;
+}
+
 #checkboxes {
     text-align: center;
 }
@@ -113,4 +119,14 @@ button:hover {
     border: 1px solid red;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Checkbox color*/
+body input[type=checkbox]:checked {
+    border: 2px solid orange !important;
+    background-color: red !important;
+}
+input[type=checkbox] {
+    border: 2px solid orange;
+    background-color: white;
 }

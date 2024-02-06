@@ -63,18 +63,14 @@
 
     <main>
     <div class="container mt-5">
-      <!-- Name of Cat Breed -->
+
+      <!--Dropdown menu search form-->
       <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="id_NameCatBreed">Name of Cat Breed:</label>
-          <input
-          type="text"
-          class="form-control"
-          id="id_NameCatBreed"
-          name="nameCatBreed" 
-          placeholder="Enter name of cat breed"
-          maxlength="100"
-          autocomplete="on"/>
+        <div class="form-group col-md-4">
+          <label for="catBreedDropdown">Name of Cat Breed:</label>
+          <select class="form-control" id="id_NameCatBreed" name="nameCatBreed">
+            <!-- Options will be dynamically added by JavaScript -->
+          </select>
         </div>
       </div>
 
@@ -171,6 +167,7 @@
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/helperLocalStorage.js"></script>
     <script src="./assets/js/api-ninja.js"></script>
+    <script src="./assets/js/api-thecat.js"></script>
     <script src="./assets/js/searchCat.js"></script>
   </body>
 </html>

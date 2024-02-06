@@ -8,10 +8,37 @@ $("#search").on("click", function (event) {
 })
 
 
+// This clears all input fields to blank
+$("#clear").on("click", function (event) {
+  event.preventDefault(); //clears the list of found cats
+  $("#catalogue-cards").empty(); //clears search categories
+  $("#no-cat-results").empty();
+  $("#id_NameCatBreed").val("");
+  $("#id_MinWeight").val("");
+  $("#id_MaxWeight").val("");
+  $("#id_MinLifeExpectancy").val("");
+  $("#id_MaxLifeExpectancy").val("");
+  $("#id_FamilyFriendly").prop("checked", false);
+  $("#id_Playfulness").prop("checked", false);
+  $("#id_FriendlyWithOtherPets").prop("checked", false);
+  $("#id_ChildrenFriendly").prop("checked", false);
+});
+
+
 // Event Listemer and wait for DOMContentLoaded event ie. when initial HTML has loaded
 document.addEventListener('DOMContentLoaded', function() {
-     
-   // Read from Local Storage
+
+      // Populate the dropdown with cat breeds
+    const catBreedDropdown = document.getElementById('id_NameCatBreed');
+    catBreeds.forEach(breed => {
+      const option = document.createElement('option');
+      option.value = breed;
+      option.text = breed;
+      catBreedDropdown.appendChild(option);
+    });
+
+   
+    // Read from Local Storage
     let settingsData = readFromLocalStorage();
    
     // Load Search form with criteria from last search execution
@@ -51,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
           $("#id_ChildrenFriendly").prop("checked", false);;   
         }
       }   
+      
 })  
 
 // This function takes as parameters : the data returned from the API and the user search filtering parameters
@@ -75,8 +103,10 @@ function filterRecords(dataOrig, parameters) {
     filteredData = [];
     if (parameters && parameters.MinWeight !== undefined && parameters.MinWeight !== '') {
       data.forEach(cat => {
-        if (Number(cat.min_weight) >= Number(parameters.MinWeight)) {
-          filteredData.push(cat); // add to array
+        if ( Number(parameters.MinWeight) >= Number(cat.min_weight) ) {
+          if ( Number(parameters.MinWeight)<= Number(cat.max_weight) ) {
+            filteredData.push(cat); // add to array
+          }
         }
       });
       data = filteredData; // initalise variable
@@ -85,20 +115,24 @@ function filterRecords(dataOrig, parameters) {
     // Max Weight
     filteredData = [];
     if (parameters && parameters.MaxWeight !== undefined && parameters.MaxWeight !== '') {
-      data.forEach(cat => {
-        if (Number(cat.max_weight) <= Number(parameters.MaxWeight)) {
-          filteredData.push(cat); // add to array
+        data.forEach(cat => {
+        if ( parameters.MaxWeight <= Number(cat.max_weight) ) {
+          if ( Number(parameters.MaxWeight)>= Number(cat.min_weight) ) {
+            filteredData.push(cat); // add to array
+          }
         }
       });
       data = filteredData; // initalise variable
     }
   
     // Min Life Expectancy
-    filteredData = [];
+      filteredData = [];
     if (parameters && parameters.MinLifeExpectancy !== undefined && parameters.MinLifeExpectancy !== '') {
       data.forEach(cat => {
-        if (Number(cat.min_life_expectancy) >= Number(parameters.MinLifeExpectancy)) {
-          filteredData.push(cat); // add to array
+        if ( Number(parameters.MinLifeExpectancy) >= Number(cat.min_life_expectancy) ) {
+          if ( Number(parameters.MinLifeExpectancy)<= Number(cat.max_life_expectancy) ) {
+            filteredData.push(cat); // add to array
+          }
         }
       });
       data = filteredData; // initalise variable
@@ -107,13 +141,16 @@ function filterRecords(dataOrig, parameters) {
     // Max Life Expectancy
     filteredData = [];
     if (parameters && parameters.MaxLifeExpectancy !== undefined && parameters.MaxLifeExpectancy !== '') {
-      data.forEach(cat => {
-        if (Number(cat.max_life_expectancy) <= Number(parameters.MaxLifeExpectancy)) {
-          filteredData.push(cat); // add to array
+        data.forEach(cat => {
+        if ( parameters.MaxLifeExpectancy <= Number(cat.max_life_expectancy) ) {
+          if ( Number(parameters.MaxLifeExpectancy)>= Number(cat.min_life_expectancy) ) {
+            filteredData.push(cat); // add to array
+          }
         }
       });
       data = filteredData; // initalise variable
     }
+
   
     // Family Friendly
     filteredData = [];
