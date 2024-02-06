@@ -37,18 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
       catBreedDropdown.appendChild(option);
     });
 
-
-    // Populate the dropdown with Sort Order
-    const catSortOrderDropdown = document.getElementById('id_SortOrder');
-    sortOrderSelection.forEach(breed => {
-      const option = document.createElement('option');
-      option.value = breed;
-      option.text = breed;
-      catSortOrderDropdown.appendChild(option);
-    });
-
-
-
     // Read from Local Storage
     let settingsData = readFromLocalStorage();
 
@@ -225,6 +213,5 @@ function readSearchFilterFieldsfromForm() {
       Playfulness: $("#id_Playfulness").prop("checked"),
       FriendlyWithOtherPets: $("#id_FriendlyWithOtherPets").prop("checked"),
       ChildrenFriendly: $("#id_ChildrenFriendly").prop("checked"),
-      SortBy: $("#id_SortOrder").val(),
     }
 }
