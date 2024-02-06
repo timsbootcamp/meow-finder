@@ -165,11 +165,11 @@ async function fetchDataFrom_NinjaAPI() {
       // The data returned from the API and the user search filtering parameters are passed
       let filteredData =  filterRecords(data, filtersSearch)
 
-      // Sort Routine -   
-      let filteredSortedData = sortRecords(filtersSearch, filteredData);  
+      // Sort Routine - !ARVI!  
+      //let filteredSortedData = sortRecords(filtersSearch, filteredData);  
 
       // Display data
-      displaySearchResults_DynamicHTML(filteredSortedData, true);
+      displaySearchResults_DynamicHTML(filteredData, true);
   
 
     } catch (error) {
@@ -186,9 +186,9 @@ function playSoundFile(soundFileUrl) {
 
 
 // Function reads settings and determines Sort Order
-function sortRecords(filtersSearch, data) {
+function sortRecords(data, sortBy) {
 
-     switch (filtersSearch.SortBy) {
+     switch (sortBy) {
 
         // Breed Name - Ascending Order
         case `${sortBreedName}: ${sortAscending}`:  
