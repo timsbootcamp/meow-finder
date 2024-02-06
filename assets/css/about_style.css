@@ -1,0 +1,107 @@
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 122, 80);
+    min-height: 100vh;
+}
+/* NAVBAR-BEGIN */
+    /* NAVBAR BEGINS */
+    .navbar {
+        position: fixed;
+        z-index: 1000;
+        top:0px;
+        width: 100vw;
+    }
+    .logo {
+        position:fixed;
+        left: 0px;
+        top:10px;
+        width:90px;
+        }
+    .navbar ul{
+        z-index: 1000;
+        list-style: none;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        top: 0px;
+        text-align: center;
+        position:fixed;
+        right: 30px;
+       }
+    .navbar li{
+        display: inline-block;
+        z-index: 1000;
+    }
+    .navbar a{
+        text-decoration: none;
+        color: rgb(252, 255, 117);
+        display: block;
+        padding: 25px;
+        font-weight: bold;
+        text-align: center;
+        width: 130px;
+    }
+    .icon {
+        top:25px;
+        width: 30px;
+        height:18px;
+    }
+    /* .icon:hover{
+        /* box-shadow:rgb(255, 122, 80) !important; */
+    
+    .navbar a:hover{
+        text-decoration: none;
+        color: rgb(255, 122, 80);
+        background:rgb(252, 255, 117);
+        width: 130px;
+    }
+    .icon img {
+        width: 100%;
+        display:block;
+    }
+  
+/* NAVBAR-END */
+
+
+  .main-content {
+    padding: 200px;
+  }
+
+  #about {
+    text-align: center;
+    padding:100px;
+   
+  }
+
+  /* paragraph style */
+p {
+    font-size: 16px;
+    color: rgb(252, 255, 117);
+}
+
+h3 {
+    font-size: 24px;
+    color: rgb(252, 255, 117);
+}
+
+.float-left{
+    float: left;
+    margin-right: 25px;
+}
+
+.float-right{
+    float:right;
+    margin-left:25px;
+}
+
+.tim-image img, .elena-image img , .ada-image img {
+    width:350px;
+}
+
+.tim-text , .elena-text , .ada-text{
+    padding: 100px;
+    text-align: left;
+}
