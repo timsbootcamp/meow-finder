@@ -67,12 +67,14 @@ body {
 
 
   .main-content {
-    padding: 200px;
+    top: 10%;
+    padding-right: 200px;
+    padding-left: 200px;
   }
 
   #about {
     text-align: center;
-    padding:100px;
+    padding:140px;
    
   }
 
@@ -97,11 +99,17 @@ h3 {
     margin-left:25px;
 }
 
-.tim-image img, .elena-image img , .ada-image img {
+.tim-image img, .elena-image img , .ada-image img , .oleksandr-image img , .aniruddha-image img {
     width:350px;
 }
 
-.tim-text , .elena-text , .ada-text{
+.tim-text , .elena-text , .ada-text , .oleksandr-text, .aniruddha-text {
     padding: 100px;
     text-align: left;
+}
+
+#tim-about {
+    display:block;
+    background-color: rgb(255, 255, 255);
+    width: 1200px;
 }
