@@ -1,27 +1,30 @@
-//'api-thecat.js' holds all Javascript related to accessing 'theCatAPI'
+// 'api-thecat.js' holds all Javascript related to accessing 'theCatAPI'
 const apiKey_TheCatAPI = "live_lu84yq93RYo14uTkB0E6v8sUCAVLkUuGhJ42BQJ9o4gEr1gBOa6nYPsks0QBPsXn";
 const baseUrl_TheCatAPI = `https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1`;
 
+// header settings for api request
 const headers = new Headers({
   "Content-Type": "application/json",
   "x-api-key": apiKey_TheCatAPI
 });
 
-//request settings
+// request settings
 var requestOptions = {
   method: 'GET',
   headers: headers,
   redirect: 'follow'
 };
 
-//getting a random cat using API
+// getting a random cat using API
 function getRandomCat() {
+  // returns data and request status
   return new Promise((resolve, reject) => {
     fetch(baseUrl_TheCatAPI, requestOptions)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
+        // decodes the response in JSON format
         return response.json();
       })
       .then(data => {
@@ -45,6 +48,7 @@ async function ShowRandomCat() {
     // write a random cat into the cat variable from a function that returns a random cat
     let cat = await getRandomCat();
 
+    // add a picture and description of a new random cat
     $("#cat-fact-text").html(cat[0].breeds[0].description);
     $('#cat-fact-img').attr('src', cat[0].url)
       .attr('width', '100')  // Adjust to the desired width
