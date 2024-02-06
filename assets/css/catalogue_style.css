@@ -3,6 +3,18 @@
     --cream: #FFEBD4;
     --yellow: #FCFF75;
 }
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    background-color: rgb(255, 122, 80);
+    line-height: 1.5;
+    background-image: url("../images/wave-background.webp");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 50px 250px;
+    
+}
 
 /* NAVBAR-BEGIN */
     /* NAVBAR BEGINS */
@@ -63,18 +75,6 @@
   
 /* NAVBAR-END */
 
-body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
-    background-color: rgb(255, 122, 80);
-    line-height: 1.5;
-    background-image: url("LeftWave_4.webp");
-    background-position: left;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 50px 250px;
-    
-}
 
 @media only screen and (max-width: 1200px) {
     body {

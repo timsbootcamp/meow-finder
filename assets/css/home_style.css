@@ -92,14 +92,14 @@ body {
 
       #main-image {
         position: absolute;
-        top:100px;
+        top:20px;
         right:60%;
         width:200px;
       }
 
       #cat-carousel {
         position: absolute;
-        top: 400px;
+        top: 300px;
       }
 
    /*Footer*/

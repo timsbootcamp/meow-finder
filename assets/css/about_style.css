@@ -67,7 +67,7 @@ body {
 
 
   .main-content {
-    padding: 150px;
+    padding: 200px;
   }
 
   #about {
@@ -78,7 +78,12 @@ body {
   /* paragraph style */
 p {
     font-size: 16px;
-    /* color: rgb(252, 255, 117); */
+    color: rgb(252, 255, 117);
+}
+
+h3 {
+    font-size: 24px;
+    color: rgb(252, 255, 117);
 }
 
 .float-left{
