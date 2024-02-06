@@ -67,15 +67,25 @@
 
   <!--Catalogue-->
   <section id="catalogue">
-    
+
          <!-- SORT ORDER - BEGIN     -->
       <!--Dropdown menu search form-->
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="catSortOrderDropdown">Sort Order:</label>
-          <select class="form-control" id="id_SortOrder" name="sortOrder">
+      <div id="catSortDropdown">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="catSortOrderDropdown">Sort Order:</label>
+            <select class="form-control" id="id_SortOrder" name="sortOrder">
             <!-- Options will be dynamically added by JavaScript -->
-          </select>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row text-center">
+          <div class="form-group col-md-12 mt-3">
+            <button id="catalogueSort" type="submit" class="btn btn-secondary">
+              Sort
+            </button>
+          </div>
         </div>
       </div>
       <!-- SORT ORDER - END     -->
