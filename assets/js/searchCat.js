@@ -3,7 +3,7 @@
 
 // When the element with the ID "search" is clicked, the below function will run
 $("#search").on("click", function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
     fetchDataFrom_NinjaAPI();
 })
 
@@ -28,7 +28,7 @@ $("#clear").on("click", function (event) {
 // Event Listemer and wait for DOMContentLoaded event ie. when initial HTML has loaded
 document.addEventListener('DOMContentLoaded', function() {
 
-      // Populate the dropdown with cat breeds
+    // Populate the dropdown with cat breeds
     const catBreedDropdown = document.getElementById('id_NameCatBreed');
     catBreeds.forEach(breed => {
       const option = document.createElement('option');
@@ -37,49 +37,62 @@ document.addEventListener('DOMContentLoaded', function() {
       catBreedDropdown.appendChild(option);
     });
 
-   
+
+    // Populate the dropdown with Sort Order
+    const catSortOrderDropdown = document.getElementById('id_SortOrder');
+    sortOrderSelection.forEach(breed => {
+      const option = document.createElement('option');
+      option.value = breed;
+      option.text = breed;
+      catSortOrderDropdown.appendChild(option);
+    });
+
+
+
     // Read from Local Storage
     let settingsData = readFromLocalStorage();
-   
+
     // Load Search form with criteria from last search execution
     if (settingsData) {
         $("#id_NameCatBreed").val(settingsData.NameCatBreed);
         $("#id_MinWeight").val(settingsData.MinWeight);
-        $("#id_MaxWeight").val(settingsData.MaxWeight);   
+        $("#id_MaxWeight").val(settingsData.MaxWeight);
 
-        $("#id_MinLifeExpectancy").val(settingsData.MinLifeExpectancy);   
-        $("#id_MaxLifeExpectancy").val(settingsData.MaxLifeExpectancy);   
+        $("#id_MinLifeExpectancy").val(settingsData.MinLifeExpectancy);
+        $("#id_MaxLifeExpectancy").val(settingsData.MaxLifeExpectancy);
 
         if (settingsData.FamilyFriendly) {
-          $("#id_FamilyFriendly").prop("checked", true);   
+          $("#id_FamilyFriendly").prop("checked", true);
         }
         else {
-          $("#id_FamilyFriendly").prop("checked", false);;   
+          $("#id_FamilyFriendly").prop("checked", false);;
         }
-        
+
         if (settingsData.Playfulness) {
-          $("#id_Playfulness").prop("checked", true);   
+          $("#id_Playfulness").prop("checked", true);
         }
         else {
-          $("#id_Playfulness").prop("checked", false);;   
+          $("#id_Playfulness").prop("checked", false);;
         }
 
         if (settingsData.FriendlyWithOtherPets) {
-          $("#id_FriendlyWithOtherPets").prop("checked", true);   
+          $("#id_FriendlyWithOtherPets").prop("checked", true);
         }
         else {
-          $("#id_FriendlyWithOtherPets").prop("checked", false);;   
+          $("#id_FriendlyWithOtherPets").prop("checked", false);;
         }
 
         if (settingsData.ChildrenFriendly) {
-          $("#id_ChildrenFriendly").prop("checked", true);   
+          $("#id_ChildrenFriendly").prop("checked", true);
         }
         else {
-          $("#id_ChildrenFriendly").prop("checked", false);;   
+          $("#id_ChildrenFriendly").prop("checked", false);;
         }
-      }   
       
-})  
+        $("#id_SortOrder").val(settingsData.SortBy);
+      }
+
+})
 
 // This function takes as parameters : the data returned from the API and the user search filtering parameters
 // For each field, we are checking to see if user has specified any search filtering and if so then filter the data
@@ -87,7 +100,7 @@ function filterRecords(dataOrig, parameters) {
 
     // copy data to a new variable so we can always see what is input and what is being filtered also
     let data = dataOrig;
-  
+
     // Name Cat Breed
     let filteredData = [];
     if (parameters && parameters.NameCatBreed !== undefined && parameters.NameCatBreed !== '') {
@@ -98,7 +111,7 @@ function filterRecords(dataOrig, parameters) {
       });
       data = filteredData; // initalise variable
     }
-  
+
     // Min Weight
     filteredData = [];
     if (parameters && parameters.MinWeight !== undefined && parameters.MinWeight !== '') {
@@ -111,7 +124,7 @@ function filterRecords(dataOrig, parameters) {
       });
       data = filteredData; // initalise variable
     }
-  
+
     // Max Weight
     filteredData = [];
     if (parameters && parameters.MaxWeight !== undefined && parameters.MaxWeight !== '') {
@@ -124,7 +137,7 @@ function filterRecords(dataOrig, parameters) {
       });
       data = filteredData; // initalise variable
     }
-  
+
     // Min Life Expectancy
       filteredData = [];
     if (parameters && parameters.MinLifeExpectancy !== undefined && parameters.MinLifeExpectancy !== '') {
@@ -137,7 +150,7 @@ function filterRecords(dataOrig, parameters) {
       });
       data = filteredData; // initalise variable
     }
-  
+
     // Max Life Expectancy
     filteredData = [];
     if (parameters && parameters.MaxLifeExpectancy !== undefined && parameters.MaxLifeExpectancy !== '') {
@@ -151,7 +164,7 @@ function filterRecords(dataOrig, parameters) {
       data = filteredData; // initalise variable
     }
 
-  
+
     // Family Friendly
     filteredData = [];
     if (parameters && parameters.FamilyFriendly) {
@@ -162,7 +175,7 @@ function filterRecords(dataOrig, parameters) {
       });
       data = filteredData; // initalise variable
     }
-  
+
     // Playfulness
     filteredData = [];
     if (parameters && parameters.Playfulness) {
@@ -173,7 +186,7 @@ function filterRecords(dataOrig, parameters) {
       });
       data = filteredData; // initalise variable
     }
-  
+
     // Friendly with other pets
     filteredData = [];
     if (parameters && parameters.FriendlyWithOtherPets) {
@@ -184,7 +197,7 @@ function filterRecords(dataOrig, parameters) {
       });
       data = filteredData; // initalise variable
     }
-  
+
     // Children Friendly
     filteredData = [];
     if (parameters && parameters.ChildrenFriendly) {
@@ -195,10 +208,10 @@ function filterRecords(dataOrig, parameters) {
       });
       data = filteredData; // initalise variable
     }
-  
+
     return data;
   }
-  
+
 
 // Read form input fields from HTML page and return object
 function readSearchFilterFieldsfromForm() {
@@ -211,7 +224,7 @@ function readSearchFilterFieldsfromForm() {
       FamilyFriendly: $("#id_FamilyFriendly").prop("checked"),
       Playfulness: $("#id_Playfulness").prop("checked"),
       FriendlyWithOtherPets: $("#id_FriendlyWithOtherPets").prop("checked"),
-      ChildrenFriendly: $("#id_ChildrenFriendly").prop("checked")
+      ChildrenFriendly: $("#id_ChildrenFriendly").prop("checked"),
+      SortBy: $("#id_SortOrder").val(),
     }
 }
-    

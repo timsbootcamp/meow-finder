@@ -16,7 +16,25 @@ const catBreeds = [
 'British Longhair', 'British Shorthair', 'Burmese', 'Burmilla'
 ];
 
+// Dropdown sort selection items
+const sortBreedName = "Breed Name";
+const sortMinWeight = "Min Weight";
+const sortMaxWeight = "Max Weight";
+const sortMinLifeExpectancy = "Min Life Expectancy";
+const sortMaxLifeExpectancy = "Max Life Expectancy";
+const sortAscending = "ascending";
+const sortDescending = "descending";
 
+
+// Build up array at runtime of Sort By Items used in 'search.html'
+const sortOrderSelection = [`${sortBreedName}: ${sortAscending}`, `${sortBreedName}: ${sortDescending}`, 
+`${sortMinWeight}: ${sortAscending}`, `${sortMinWeight}: ${sortDescending}`, 
+`${sortMaxWeight}: ${sortAscending}`, `${sortMaxWeight}: ${sortDescending}`, 
+`${sortMinLifeExpectancy}: ${sortAscending}`, `${sortMinLifeExpectancy}: ${sortDescending}`, 
+`${sortMaxLifeExpectancy}: ${sortAscending}`, `${sortMaxLifeExpectancy}: ${sortDescending}`
+]
+
+// Updates HTML page dynamically - called by 'search.html' and 'catalogue.html'
 function displaySearchResults_DynamicHTML(data, viaSearchPage) {
 
     let len = Object.entries(data).length
@@ -39,7 +57,6 @@ function displaySearchResults_DynamicHTML(data, viaSearchPage) {
     $('#catalogue-cards').empty("")
     var catalogueCards = $('#catalogue-cards');
 
-
     for (var i = 0; i <= len - 1; i++) {      
         var catalogueCards = document.getElementById('catalogue-cards');
         var cardElement = createCatCard(i+1)
@@ -59,8 +76,6 @@ function displaySearchResults_DynamicHTML(data, viaSearchPage) {
         $(`#min-life-result${i + 1}`).text(`${data[i].min_life_expectancy} to `);
         $(`#max-life-result${i + 1}`).text(`${data[i].max_life_expectancy}`);
         
-        //min-life-result        
-
         // // Handling image 
         let imageContainer = $(`#cat-breed${i + 1}-image`);
         imageContainer.attr('src', data[i].image_link);
@@ -91,7 +106,7 @@ function addStarDynamicToElement(htmlElement, noStars) {
     }
 }
 
-
+// Creates Cat card dynamically - used in both 'search.html' and 'catalogue.html'
 function createCatCard(i) {
     var cardDiv = document.createElement("div");
     cardDiv.classList.add("col");
@@ -149,9 +164,12 @@ async function fetchDataFrom_NinjaAPI() {
 
       // The data returned from the API and the user search filtering parameters are passed
       let filteredData =  filterRecords(data, filtersSearch)
-  
+
+      // Sort Routine -   
+      let filteredSortedData = sortRecords(filtersSearch, filteredData);  
+
       // Display data
-      displaySearchResults_DynamicHTML(filteredData, true);
+      displaySearchResults_DynamicHTML(filteredSortedData, true);
   
 
     } catch (error) {
@@ -164,4 +182,108 @@ async function fetchDataFrom_NinjaAPI() {
 function playSoundFile(soundFileUrl) {
     var audio = new Audio(soundFileUrl);
     audio.play();
+}
+
+
+// Function reads settings and determines Sort Order
+function sortRecords(filtersSearch, data) {
+
+     switch (filtersSearch.SortBy) {
+
+        // Breed Name - Ascending Order
+        case `${sortBreedName}: ${sortAscending}`:  
+            return sortTextFieldInArrayOfObject(data, 'name', true)
+
+
+        // Breed Name - Descending Order
+        case `${sortBreedName}: ${sortDescending}`:  
+            return sortTextFieldInArrayOfObject(data, 'name', false)
+
+
+        // Min Weight - Ascending Order
+        case `${sortMinWeight}: ${sortAscending}`:  
+             return sortNumberFieldInArrayOfObject(data, 'min_weight', true)
+
+
+        // Min Weight - Descending Order
+        case `${sortMinWeight}: ${sortDescending}`:  
+             return sortNumberFieldInArrayOfObject(data, 'min_weight', false)
+
+
+        // Max Weight - Ascending Order
+        case `${sortMaxWeight}: ${sortAscending}`:  
+             return sortNumberFieldInArrayOfObject(data, 'max_weight', true)
+
+        // Max Weight - Descending Order
+        case `${sortMaxWeight}: ${sortDescending}`:  
+             return sortNumberFieldInArrayOfObject(data, 'max_weight', false)
+
+
+        // Min Life Expectancy - Ascending Order
+        case `${sortMinLifeExpectancy}: ${sortAscending}`:  
+             return sortNumberFieldInArrayOfObject(data, 'min_life_expectancy', true)
+
+        // Min Life Expectancy - Descending Order
+        case `${sortMinLifeExpectancy}: ${sortDescending}`:  
+             return sortNumberFieldInArrayOfObject(data, 'min_life_expectancy', false)
+             
+
+        // Life Expectancy - Ascending Order
+        case `${sortMaxLifeExpectancy}: ${sortAscending}`:  
+             return sortNumberFieldInArrayOfObject(data, 'max_life_expectancy', true)
+
+        // Life Expectancy - Descending Order
+        case `${sortMaxLifeExpectancy}: ${sortDescending}`:  
+             return sortNumberFieldInArrayOfObject(data, 'max_life_expectancy', false)
+
+        default: // default search is Breed Cat Name - ascending    
+            return sortTextFieldInArrayOfObject(data, 'name', true)
+    }
+}
+
+
+// Reusable Sort function on an array of object
+// - Parameter 1 : data of object
+// - Parameter 2 : Property within above object
+// - Parameter 3 : true to sort in ascending order or false to sort in descending order
+function sortTextFieldInArrayOfObject(data, sortField, sortOrderAscending) {
+
+
+    if (!Array.isArray(data)) {
+        console.error("Error message : 'data' must be an array.");
+        return data;
+    }
+    
+    if (typeof sortField !== 'string' || !sortField.trim()) {
+        console.error("Error Message : 'sortField' must be a non-empty string.");
+        return data;
+    }
+
+    return data.sort((a, b) => {
+        if (sortOrderAscending) {
+            return a[sortField].localeCompare(b[sortField]);
+        } else {
+            return b[sortField].localeCompare(a[sortField]);
+        }
+    });
+}
+
+
+// Reusable Sort function on an array of object
+// - Parameter 1 : data of object
+// - Parameter 2 : Property within above object
+// - Parameter 3 : true to sort in ascending order or false to sort in descending order
+function sortNumberFieldInArrayOfObject(data, sortField, sortOrderAscending) {
+
+    return data.sort((a, b) => {
+        let valueOne = parseFloat(a[sortField]);
+        let valueTwo = parseFloat(b[sortField]);
+
+        if (!isNaN(valueOne) && !isNaN(valueTwo)) {
+            return sortOrderAscending ? valueOne - valueTwo : valueTwo - valueOne;
+        } else {
+            console.error("Error Message: Values of 'sortField' must be numbers.");
+            return 0;
+        }
+    });
 }
