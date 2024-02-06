@@ -20,11 +20,20 @@ const catBreeds = [
 function displaySearchResults_DynamicHTML(data, viaSearchPage) {
 
     let len = Object.entries(data).length
+    let catTitle="";
 
     if (viaSearchPage){
         // Play Sound file when only searching
         playSoundFile(soundFile_Meow);
-        $("#no-cat-results").text("The search returned " + len + " cats that match the specified criteria");
+        if (len === 1) {
+            catTitle="cat";
+        }
+        
+        else {
+            catTitle="cats";
+        }            
+        
+        $("#no-cat-results").text(`The search returned ${len} ${catTitle} that matched the specified criteria`);
     }
 
     $('#catalogue-cards').empty("")
