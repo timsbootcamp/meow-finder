@@ -103,8 +103,10 @@ function filterRecords(dataOrig, parameters) {
     filteredData = [];
     if (parameters && parameters.MinWeight !== undefined && parameters.MinWeight !== '') {
       data.forEach(cat => {
-        if (Number(cat.min_weight) >= Number(parameters.MinWeight)) {
-          filteredData.push(cat); // add to array
+        if ( Number(parameters.MinWeight) >= Number(cat.min_weight) ) {
+          if ( Number(parameters.MinWeight)<= Number(cat.max_weight) ) {
+            filteredData.push(cat); // add to array
+          }
         }
       });
       data = filteredData; // initalise variable
@@ -113,20 +115,24 @@ function filterRecords(dataOrig, parameters) {
     // Max Weight
     filteredData = [];
     if (parameters && parameters.MaxWeight !== undefined && parameters.MaxWeight !== '') {
-      data.forEach(cat => {
-        if (Number(cat.max_weight) <= Number(parameters.MaxWeight)) {
-          filteredData.push(cat); // add to array
+        data.forEach(cat => {
+        if ( parameters.MaxWeight <= Number(cat.max_weight) ) {
+          if ( Number(parameters.MaxWeight)>= Number(cat.min_weight) ) {
+            filteredData.push(cat); // add to array
+          }
         }
       });
       data = filteredData; // initalise variable
     }
   
     // Min Life Expectancy
-    filteredData = [];
+      filteredData = [];
     if (parameters && parameters.MinLifeExpectancy !== undefined && parameters.MinLifeExpectancy !== '') {
       data.forEach(cat => {
-        if (Number(cat.min_life_expectancy) >= Number(parameters.MinLifeExpectancy)) {
-          filteredData.push(cat); // add to array
+        if ( Number(parameters.MinLifeExpectancy) >= Number(cat.min_life_expectancy) ) {
+          if ( Number(parameters.MinLifeExpectancy)<= Number(cat.max_life_expectancy) ) {
+            filteredData.push(cat); // add to array
+          }
         }
       });
       data = filteredData; // initalise variable
@@ -135,13 +141,16 @@ function filterRecords(dataOrig, parameters) {
     // Max Life Expectancy
     filteredData = [];
     if (parameters && parameters.MaxLifeExpectancy !== undefined && parameters.MaxLifeExpectancy !== '') {
-      data.forEach(cat => {
-        if (Number(cat.max_life_expectancy) <= Number(parameters.MaxLifeExpectancy)) {
-          filteredData.push(cat); // add to array
+        data.forEach(cat => {
+        if ( parameters.MaxLifeExpectancy <= Number(cat.max_life_expectancy) ) {
+          if ( Number(parameters.MaxLifeExpectancy)>= Number(cat.min_life_expectancy) ) {
+            filteredData.push(cat); // add to array
+          }
         }
       });
       data = filteredData; // initalise variable
     }
+
   
     // Family Friendly
     filteredData = [];
