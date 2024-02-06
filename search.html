@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/search_style.css"/>
-    <link rel="stylesheet" href="./assets/css/all_style.css">
-    <title>Search - Meow Finder</title>
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/search_style.css" />
+  <link rel="stylesheet" href="./assets/css/all_style.css">
+  <title>Search - Meow Finder</title>
+  <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
+</head>
+
+<body>
 
   <!-- NAVBAR-BEGIN -->
   <header class="navbar">
     <label class="logo"><img src="assets/images/head-logo.png"></label>
     <ul>
-      <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
-      <li><a href = "index.html">Home</a></li></lil>
-      <li><a href = "search.html">Search</a></li>
-      <li><a href = "catalogue.html">Catalogue</a></li>
-      <li><a href = "about.html">About</a></li>
+      <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label
+            class="icon"><img src="assets/images/icon2.png"></label></a></li>
+      <li><a href="index.html">Home</a></li>
+      </lil>
+      <li><a href="search.html">Search</a></li>
+      <li><a href="catalogue.html">Catalogue</a></li>
+      <li><a href="about.html">About</a></li>
     </ul>
 
     <div id="modal-cat-fact">
@@ -61,7 +66,7 @@
     </div>
   </div>
 
-    <main>
+  <main>
     <div class="container mt-5">
 
       <!--Dropdown menu search form-->
@@ -79,13 +84,13 @@
       <div class="row">
         <div class="form-group col">
           <label for="id_MinWeight">Min Weight (kg):</label>
-          <input type="number" class="form-control" id="id_MinWeight" name="minWeight" min="1" max="30"/>
+          <input type="number" class="form-control" id="id_MinWeight" name="minWeight" min="1" max="30" />
           <span class="unit"></span>
         </div>
 
         <div class="col">
           <label for="id_MaxWeight">Max Weight (kg):</label>
-          <input type="number" class="form-control" id="id_MaxWeight" name="maxWeight" min="1" max="30"/>
+          <input type="number" class="form-control" id="id_MaxWeight" name="maxWeight" min="1" max="30" />
           <span class="unit"></span>
         </div>
       </div>
@@ -94,13 +99,15 @@
       <div class="row">
         <div class="form-group col-md-6">
           <label for="id_MinLifeExpectancy">Min Life Expectancy:</label>
-          <input type="number" class="form-control" id="id_MinLifeExpectancy" name="minLifeExpectancy" min="1" max="30"/>
+          <input type="number" class="form-control" id="id_MinLifeExpectancy" name="minLifeExpectancy" min="1"
+            max="30" />
           <span class="placeholder"></span>
         </div>
 
         <div class="col-md-6">
           <label for="id_MaxLifeExpectancy">Max Life Expectancy:</label>
-          <input type="number" class="form-control" id="id_MaxLifeExpectancy" name="maxLifeExpectancy" min="1" max="30"/>
+          <input type="number" class="form-control" id="id_MaxLifeExpectancy" name="maxLifeExpectancy" min="1"
+            max="30" />
           <span class="placeholder"></span>
         </div>
       </div>
@@ -116,7 +123,7 @@
           <input class="form-check-input" type="checkbox" id="id_Playfulness" name="playfulness" value="1">
         </div>
         <div class="form-check form-check-inline">
-          <label class="form-check-label" for="id_FriendlyWithOtherPets">Playfulness?</label>
+          <label class="form-check-label" for="id_FriendlyWithOtherPets">Friendly with Other Pets?</label>
           <input class="form-check-input" type="checkbox" id="id_FriendlyWithOtherPets" name="friendlyWithOtherPets" value="1">
         </div>
         <div class="form-check form-check-inline">
@@ -125,6 +132,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Search and Clear buttons -->
       <div class="form-row text-center">
@@ -139,7 +147,6 @@
           </button>
         </div>
       </div>
-    </div>
     </main>
         
     <!--Search results container-->
@@ -154,22 +161,28 @@
   <!--Footer-->
   <footer>
     <ul>
-      <li><a href="https://www.instagram.com/explore/tags/cat/" target="_blank"><img src="assets/images/instagram_icon.png"></a></li>
-      <li><a href="https://twitter.com/hashtag/cat?src=hashtag_click" target="_blank"><img src="assets/images/twitter_icon.png"></a></li>
-      <li><a href="https://www.pinterest.co.uk/search/pins/?q=cat&rs=typed" target="_blank"><img src="assets/images/pinterest_icon.png"></a></li>
+      <li><a href="https://www.instagram.com/explore/tags/cat/" target="_blank"><img
+            src="assets/images/instagram_icon.png"></a></li>
+      <li><a href="https://twitter.com/hashtag/cat?src=hashtag_click" target="_blank"><img
+            src="assets/images/twitter_icon.png"></a></li>
+      <li><a href="https://www.pinterest.co.uk/search/pins/?q=cat&rs=typed" target="_blank"><img
+            src="assets/images/pinterest_icon.png"></a></li>
     </ul>
     <p>&copy; 2024 Meowfinder. All rights reserved.</p>
   </footer>
   <!--Footer End-->
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/helperLocalStorage.js"></script>
-    <script src="./assets/js/api-ninja.js"></script>
-    <script src="./assets/js/api-thecat.js"></script>
-    <script src="./assets/js/searchCat.js"></script>
-  </body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/helperLocalStorage.js"></script>
+  <script src="./assets/js/api-ninja.js"></script>
+  <script src="./assets/js/api-thecat.js"></script>
+  <script src="./assets/js/searchCat.js"></script>
+</body>
+
 </html>
