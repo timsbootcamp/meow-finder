@@ -4,10 +4,6 @@
     --yellow: #FCFF75;
 }
 
-body {
-    text-align: center;
-}
-
 /*Catalogue Sort*/
 #catSortDropdown .btn-secondary {
     color: var(--orange);

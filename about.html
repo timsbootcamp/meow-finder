@@ -19,38 +19,56 @@
 
 <body>
 
- <!-- NAVBAR-BEGIN -->
- <header class="navbar">
-  <label class="logo"><img src="assets/images/paw_nav.png"></label>
-  <ul>
-<li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
-    <li><a href = "index.html">Home</a></li></lil>
-    <li><a href = "search.html">Search</a></li>
-    <li><a href = "catalogue.html">Catalogue</a></li>
-    <li><a href = "about.html">About</a></li>
-    
-  </ul>
-  <div id="modal-cat-fact">
-    <div class="modal fade" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5">Cat Fact!</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img id="cat-fact-img">
-            <p id="cat-fact-text">...</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  <!-- NAVBAR-BEGIN -->
+  <header class="navbar">
+    <label class="logo"><img src="assets/images/head-logo.png"></label>
+    <ul>
+      <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
+      <li><a href = "index.html">Home</a></li></lil>
+      <li><a href = "search.html">Search</a></li>
+      <li><a href = "catalogue.html">Catalogue</a></li>
+      <li><a href = "about.html">About</a></li>
+    </ul>
+  </header>
+
+<!-- Modal -->
+    <div id="modal-cat-fact">
+      <div class="modal" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Cat Fact!</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img id="cat-fact-img">
+              <p id="cat-fact-text"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+  <!--Error Modal Form-->
+  <div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="error-message" class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
-</header>
-<!-- NAVBAR-END -->
+  <!-- NAVBAR-END -->
 
  <!-- Small Screen Navigation Bar -->
  <div class="mobile-menu">
@@ -160,5 +178,7 @@
   </ul>
   <p>&copy; 2024 Meowfinder. All rights reserved.</p>
 </footer>
+
+<script src="./assets/js/api-thecat.js"></script>
 
 </body>
