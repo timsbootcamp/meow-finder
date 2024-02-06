@@ -72,6 +72,7 @@ body {
 
   #about {
     text-align: center;
+   
   }
 
   /* paragraph style */
@@ -90,12 +91,11 @@ p {
     margin-left:25px;
 }
 
-.tim-image img {
+.tim-image img, .elena-image img , .ada-image img {
     width:350px;
 }
 
-.tim-text {
+.tim-text , .elena-text , .ada-text{
     padding: 100px;
     text-align: left;
-
 }
