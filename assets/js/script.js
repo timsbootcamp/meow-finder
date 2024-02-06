@@ -106,6 +106,7 @@ function addStarDynamicToElement(htmlElement, noStars) {
     }
 }
 
+
 // Creates Cat card dynamically - used in both 'search.html' and 'catalogue.html'
 function createCatCard(i) {
     var cardDiv = document.createElement("div");
@@ -159,18 +160,13 @@ async function fetchDataFrom_NinjaAPI() {
   
       // Read form input fields from HTML page and return object
       let filtersSearch = readSearchFilterFieldsfromForm();
-
       writeToLocalStorage(filtersSearch);
 
       // The data returned from the API and the user search filtering parameters are passed
       let filteredData =  filterRecords(data, filtersSearch)
 
-      // Sort Routine - !ARVI!  
-      //let filteredSortedData = sortRecords(filtersSearch, filteredData);  
-
       // Display data
       displaySearchResults_DynamicHTML(filteredData, true);
-  
 
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -178,7 +174,7 @@ async function fetchDataFrom_NinjaAPI() {
   }
 
 
-  // Play sound file (url is passed to function)
+// Play sound file (url is passed to function)
 function playSoundFile(soundFileUrl) {
     var audio = new Audio(soundFileUrl);
     audio.play();
@@ -223,7 +219,8 @@ function sortRecords(data, sortBy) {
         case `${sortMinLifeExpectancy}: ${sortAscending}`:  
              return sortNumberFieldInArrayOfObject(data, 'min_life_expectancy', true)
 
-        // Min Life Expectancy - Descending Order
+
+             // Min Life Expectancy - Descending Order
         case `${sortMinLifeExpectancy}: ${sortDescending}`:  
              return sortNumberFieldInArrayOfObject(data, 'min_life_expectancy', false)
              
@@ -232,9 +229,11 @@ function sortRecords(data, sortBy) {
         case `${sortMaxLifeExpectancy}: ${sortAscending}`:  
              return sortNumberFieldInArrayOfObject(data, 'max_life_expectancy', true)
 
-        // Life Expectancy - Descending Order
+
+             // Life Expectancy - Descending Order
         case `${sortMaxLifeExpectancy}: ${sortDescending}`:  
              return sortNumberFieldInArrayOfObject(data, 'max_life_expectancy', false)
+
 
         default: // default search is Breed Cat Name - ascending    
             return sortTextFieldInArrayOfObject(data, 'name', true)
@@ -247,7 +246,6 @@ function sortRecords(data, sortBy) {
 // - Parameter 2 : Property within above object
 // - Parameter 3 : true to sort in ascending order or false to sort in descending order
 function sortTextFieldInArrayOfObject(data, sortField, sortOrderAscending) {
-
 
     if (!Array.isArray(data)) {
         console.error("Error message : 'data' must be an array.");
@@ -287,3 +285,4 @@ function sortNumberFieldInArrayOfObject(data, sortField, sortOrderAscending) {
         }
     });
 }
+
