@@ -23,7 +23,7 @@ The application must
 
 **About Us**
 
->‘Meow Finder’ is an app that integrates with ‘Cat API – Ninjas’ (Cats API - API Ninjas (api-ninjas.com) /') and ‘the Cat API’ (https://thecatapi.com/) to access a comprehensive database of cat breeds, images, and information. These two APIs provides a wealth of data on different cat breeds, and random information on cats allowing users to explore and discover their favourite furry friends. 
+>‘Meow Finder’ is an app that integrates with ‘Cat API – Ninjas’ (Cats API - API Ninjas (https://api-ninjas.com) and ‘the Cat API’ (https://thecatapi.com/) to access a comprehensive database of cat breeds, images, and information. These two APIs provides a wealth of data on different cat breeds, and random information on cats allowing users to explore and discover their favourite furry friends. 
 
 
 1.	Arvinder Anand (Tim) - Project Leader, Back-End Developer, and Quality Control Tester
