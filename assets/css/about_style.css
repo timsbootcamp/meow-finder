@@ -113,3 +113,32 @@ h3 {
     background-color: rgb(255, 255, 255);
     width: 1200px;
 } */
+
+footer {
+    margin-top: 150px !important;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+footer li {
+    padding: 10px 25px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    color: rgb(252, 255, 117);
+    padding-left: 15px;
+}
+
+footer img {
+    width: 35px;
+}
