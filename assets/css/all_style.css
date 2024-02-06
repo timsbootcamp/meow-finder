@@ -16,7 +16,6 @@ body {
 }
 
 /* NAVBAR-BEGIN */
-    /* NAVBAR BEGINS */
     .navbar {
         position: fixed;
         z-index: 1000;
@@ -58,8 +57,6 @@ body {
         width: 30px;
         height:18px;
     }
-    /* .icon:hover{
-        /* box-shadow:rgb(255, 122, 80) !important; */
     
     .navbar a:hover{
         text-decoration: none;
@@ -71,8 +68,8 @@ body {
         width: 100%;
         display:block;
     }
-  
 /* NAVBAR-END */
+
 /* MOBILE NAVBAR BEGINS */
 #mobile-menu-btn {
     display: none;
@@ -86,10 +83,6 @@ body {
     height: 60vh;
     width: 70vw;
   }
-
-
-
-
 
 
 /*Modal Form*/
