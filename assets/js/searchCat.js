@@ -42,9 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Read from Local Storage
   let settingsData = readFromLocalStorage();
 
-  // Read from Local Storage
-  let settingsData = readFromLocalStorage();
-
   // Load Search form with criteria from last search execution
   if (settingsData) {
     $("#id_NameCatBreed").val(settingsData.NameCatBreed);
