@@ -42,3 +42,8 @@ body {
     position: absolute;
     top: 400px;
 }
+
+/*Footer*/
+footer {
+    margin-top: 1050px !important;
+}
