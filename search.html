@@ -65,15 +65,16 @@
     <div class="container mt-5">
 
       <!--Dropdown menu search form-->
+      <div class="search-form-container">
       <div class="form-row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-12">
           <label for="catBreedDropdown">Name of Cat Breed:</label>
           <select class="form-control" id="id_NameCatBreed" name="nameCatBreed">
             <!-- Options will be dynamically added by JavaScript -->
           </select>
         </div>
       </div>
-
+     
       <!-- Min Weight and Max Weight -->
       <div class="row">
         <div class="form-group col">
@@ -91,13 +92,13 @@
 
       <!-- Min Life Expectancy and Max Life Expectancy -->
       <div class="row">
-        <div class="form-group col">
+        <div class="form-group col-md-6">
           <label for="id_MinLifeExpectancy">Min Life Expectancy:</label>
           <input type="number" class="form-control" id="id_MinLifeExpectancy" name="minLifeExpectancy" min="1" max="30"/>
           <span class="placeholder"></span>
         </div>
 
-        <div class="col">
+        <div class="col-md-6">
           <label for="id_MaxLifeExpectancy">Max Life Expectancy:</label>
           <input type="number" class="form-control" id="id_MaxLifeExpectancy" name="maxLifeExpectancy" min="1" max="30"/>
           <span class="placeholder"></span>
@@ -111,15 +112,15 @@
           <input class="form-check-input" type="checkbox" id="id_FamilyFriendly" name="familyFriendly" value="1">
         </div>
         <div class="form-check form-check-inline">
-          <label class="form-check-label" for="id_Playfulness">Playfulness?</label>
+          <label class="form-check-label" for="id_Playfulness">Children Friendly?</label>
           <input class="form-check-input" type="checkbox" id="id_Playfulness" name="playfulness" value="1">
         </div>
         <div class="form-check form-check-inline">
-          <label class="form-check-label" for="id_FriendlyWithOtherPets">Friendly with Other Pets?</label>
+          <label class="form-check-label" for="id_FriendlyWithOtherPets">Playfulness?</label>
           <input class="form-check-input" type="checkbox" id="id_FriendlyWithOtherPets" name="friendlyWithOtherPets" value="1">
         </div>
         <div class="form-check form-check-inline">
-          <label class="form-check-label" for="id_ChildrenFriendly">Children Friendly?</label>
+          <label class="form-check-label" for="id_ChildrenFriendly">Friendly with Other Pets?</label>
           <input class="form-check-input" type="checkbox" id="id_ChildrenFriendly" name="childrenFriendly" value="1">
         </div>
       </div>
@@ -138,6 +139,7 @@
           </button>
         </div>
       </div>
+    </div>
     </main>
         
     <!--Search results container-->
