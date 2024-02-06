@@ -18,8 +18,7 @@ body {
 
 main {
     flex: 1;
-    padding: 50px;
-    background-color: var(--orange);
+    padding-top: 100px;
 }
 
 h1 {
@@ -56,11 +55,18 @@ button:hover {
 #no-cat-results{
     text-align: center;
     color: var(--cream);
-    padding-bottom: 50px;
+    padding-top: 100px;
 }
 
 #results {
+    margin: 100px 250px;
     text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+    #results {
+        margin: 100px 150px;
+    }
 }
 
 #results h2 {
@@ -96,8 +102,16 @@ button:hover {
 }
 
 .description {
-    display: flex ;
-    justify-content: space-between ;
+    display: flex;
+    justify-content: space-between;
+    line-height: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .description {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .results {
