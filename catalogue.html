@@ -16,7 +16,7 @@
 
   <!-- NAVBAR-BEGIN -->
   <header class="navbar">
-    <label class="logo"><img src="assets/images/head-logo.png"></label>
+    <label class="logo"><img src="assets/images/paw_nav.png"></label>
     <ul>
       <li><a id="randomCatFact" type="button" class="cat-icon" data-bs-toggle="modal" data-bs-target="#cat-fact"><label class="icon"><img src="assets/images/icon2.png"></label></a></li>
       <li><a href = "index.html">Home</a></li></lil>
@@ -24,9 +24,11 @@
       <li><a href = "catalogue.html">Catalogue</a></li>
       <li><a href = "about.html">About</a></li>
     </ul>
+  </header>
 
+<!-- Modal -->
     <div id="modal-cat-fact">
-      <div class="modal fade" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -44,8 +46,6 @@
         </div>
       </div>
     </div>
-  </header>
-  <!-- NAVBAR-END -->
 
   <!--Error Modal Form-->
   <div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -63,25 +63,22 @@
       </div>
     </div>
   </div>
-  <!--Error Modal Form End-->
+  <!-- NAVBAR-END -->
 
   <!--Catalogue-->
   <section id="catalogue">
 
-         <!-- SORT ORDER - BEGIN     -->
+    <!-- SORT ORDER - BEGIN     -->
       <!--Dropdown menu search form-->
       <div id="catSortDropdown">
-        <div class="form-row">
-          <div class="form-group col-md-4">
+        <form class="row g-3">
+          <div class="col-auto">
             <label for="catSortOrderDropdown">Sort Order:</label>
             <select class="form-control" id="id_SortOrder" name="sortOrder">
             <!-- Options will be dynamically added by JavaScript -->
             </select>
           </div>
-        </div>
-
-        <div class="form-row text-center">
-          <div class="form-group col-md-12 mt-3">
+          <div class="col-3">
             <button id="catalogueSort" type="submit" class="btn btn-secondary">
               Sort
             </button>

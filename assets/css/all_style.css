@@ -13,6 +13,7 @@ body {
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
+    text-align: center;
 }
 
 /* NAVBAR-BEGIN */
@@ -125,6 +126,7 @@ footer ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    padding: 0px !important;
 }
 
 footer li {
@@ -139,7 +141,7 @@ footer p {
     display: flex;
     justify-content: center;
     color: rgb(252, 255, 117);
-    padding-left: 15px;
+    padding: 0px !important;
 }
 
 footer img {
