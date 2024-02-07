@@ -1,6 +1,6 @@
 body {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 200;
+    font-weight: 150;
     margin: 0;
     padding: 0;
     background-color: rgb(255, 122, 80);
@@ -84,9 +84,15 @@ p {
     color: rgb(252, 255, 117);
 }
 
+
 h3 {
     font-size: 24px;
-    color: rgb(252, 255, 117);
+    color: rgb(255, 255, 255);
+}
+
+h4 {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
 }
 
 .float-left{
@@ -99,6 +105,8 @@ h3 {
     margin-left:25px;
 }
 
+/* PROFILE ALIGNMENT BEGINS */
+
 .tim-image img, .elena-image img , .ada-image img , .oleksandr-image img , .aniruddha-image img {
     width:350px;
 }
@@ -107,6 +115,8 @@ h3 {
     padding: 100px;
     text-align: left;
 }
+
+/* PROFILE ALIGNMENT ENDS */
 /* 
 #tim-about {
     display:block;
@@ -114,6 +124,8 @@ h3 {
     width: 1200px;
 } */
 
+
+/* FOOTER BEGINS */
 footer {
     margin-top: 150px !important;
 }
@@ -142,3 +154,5 @@ footer p {
 footer img {
     width: 35px;
 }
+
+/* FOOTER ENDS */
