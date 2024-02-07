@@ -16,42 +16,40 @@ body {
     text-align: center;
 }
 
-h3 {
+h2 {
     font-size: 28px;
     color: rgb(255, 255, 255);
     padding-bottom: 50px;
 }
 
-/* Navbar */
+/* NAVBAR BEGINS */
 .navbar {
+    position: fixed;
     z-index: 1000;
     top:0px;
     width: 100vw;
-    position: fixed;
 }
-
 .logo {
+    position:fixed;
     left: 0px;
     top:10px;
     width:90px;
-}
-
+    }
 .navbar ul{
     z-index: 1000;
     list-style: none;
-    background:transparent;
+    background: transparent;
     padding: 0;
     margin: 0;
     top: 0px;
     text-align: center;
+    position:fixed;
     right: 30px;
-}
-
+   }
 .navbar li{
     display: inline-block;
     z-index: 1000;
 }
-
 .navbar a{
     text-decoration: none;
     color: rgb(252, 255, 117);
@@ -61,12 +59,13 @@ h3 {
     text-align: center;
     width: 130px;
 }
-
 .icon {
     top:25px;
     width: 30px;
     height:18px;
 }
+/* .icon:hover{
+    /* box-shadow:rgb(255, 122, 80) !important; */
 
 .navbar a:hover{
     text-decoration: none;
@@ -74,7 +73,6 @@ h3 {
     background:rgb(252, 255, 117);
     width: 130px;
 }
-
 .icon img {
     width: 100%;
     display:block;
@@ -93,11 +91,6 @@ h3 {
     height: 60vh;
     width: 70vw;
   }
-
-
-
-
-
 
 /*Modal Form*/
 .modal-content {

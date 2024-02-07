@@ -1,5 +1,5 @@
 :root {
-    --orange: #F78460;
+    --orange: rgb(255, 122, 80);
     --cream: #FFEBD4;
     --yellow: #FCFF75;
 }
@@ -30,21 +30,20 @@
 }
 
 #catalogueSort {
-    margin-top: 25px;
+    margin-top: 17px;
 }
 
 /*Catalogue Cards*/
 #catalogue {
-    margin: px;
-} */
+    margin: 150px 250px;
+}
 
 @media only screen and (max-width: 1200px) {
-    body {
-        margin: 50px 150px;
+    #catalogue {
+        margin: 150px 150px;
     }
 }
 
-/*Catalogue Cards*/
 #catalogue h2 {
     color: var(--yellow);
     text-decoration: underline;
@@ -76,31 +75,20 @@
 .description {
     display: flex;
     justify-content: space-between;
+    line-height: 10px;
 }
 
-/*Footer*/
-
-footer ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
+@media only screen and (max-width: 1200px) {
+    .description {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-footer li {
-    padding: 10px 25px;
+.results {
+    padding-bottom: 25px;
 }
 
-footer a {
-    text-decoration: none;
-}
-
-footer p {
-    display: flex;
-    justify-content: center;
-    color: rgb(252, 255, 117);
-    padding-left: 15px;
-}
-
-footer img {
-    width: 35px;
+.results p {
+    display: inline;
 }

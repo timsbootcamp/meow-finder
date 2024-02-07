@@ -6,100 +6,38 @@ body {
   background-color: rgb(255, 122, 80);
   min-height: 100vh;
 }
-/* NAVBAR-BEGIN */
-  /* NAVBAR BEGINS */
-  .navbar {
-      position: fixed;
-      z-index: 1000;
-      top:0px;
-      width: 100vw;
-  }
-  .logo {
-      position:fixed;
-      left: 0px;
-      top:10px;
-      width:90px;
-      }
-  .navbar ul{
-      z-index: 1000;
-      list-style: none;
-      background: rgb(255, 122, 80);
-      padding: 0;
-      margin: 0;
-      top: 0px;
-      text-align: center;
-      position:fixed;
-      right: 30px;
-     }
-  .navbar li{
-      display: inline-block;
-      z-index: 1000;
-  }
-  .navbar a{
-      text-decoration: none;
-      color: rgb(252, 255, 117);
-      display: block;
-      padding: 25px;
-      font-weight: bold;
-      text-align: center;
-      width: 130px;
-  }
-  .icon {
-      top:25px;
-      width: 30px;
-      height:18px;
-  }
-  /* .icon:hover{
-      /* box-shadow:rgb(255, 122, 80) !important; */
-  
-  .navbar a:hover{
-      text-decoration: none;
-      color: rgb(255, 122, 80);
-      background:rgb(252, 255, 117);
-      width: 130px;
-  }
-  .icon img {
-      width: 100%;
-      display:block;
-  }
 
-/* NAVBAR-END */
+/* Cat Carousel */
+.image-container img {
+  height: 400px !important;
+  object-fit: cover !important;
+}
 
+.image-container {
+  display: flex;
+  justify-content: center;
+}
 
+.layered-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 
-      /*cat carousel*/
-      .image-container img {
-        height: 400px !important;
-        object-fit: cover !important;
-       
-    }
+.layered-image img {
+  height: 700px;
+}
 
-    .image-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    /*layered images*/
-    .layered-image {
-        position: relative;
-        display: flex;
-        justify-content: center;
-      }
-
-      .layered-image img {
-        height: 700px;
-      }
-
-      #main-image {
-        position: absolute;
-        top:20px;
-        right:60%;
-        width:200px;
-      }
+#main-image {
+  position: absolute;
+  top:20px;
+  right:60%;
+  width:200px;
+}
 
 #cat-carousel {
-    position: absolute;
-    top: 300px;
+  position: absolute;
+  top: 300px;
 }
 
 /* Footer */
