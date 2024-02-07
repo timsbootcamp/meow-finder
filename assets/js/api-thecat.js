@@ -55,7 +55,8 @@ async function ShowRandomCat() {
       .attr('height', 'auto');
 
   } catch (error) {
-    console.error("Error fetching data:", error);
+    //console.error("Error fetching data:", error);
+    $("#cat-fact-text").html(error.message);
   }
 }
 
