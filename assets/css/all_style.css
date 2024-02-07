@@ -26,7 +26,7 @@ h2 {
 .navbar {
     position: fixed;
     z-index: 1000;
-    top:0px;
+    top: 0px;
     width: 100vw;
 }
 
@@ -135,6 +135,7 @@ footer ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    margin-right: 16px;
 }
 
 footer li {

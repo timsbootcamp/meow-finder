@@ -15,8 +15,8 @@ body {
 
   #about {
     text-align: center;
-    padding:140px;
-   
+    padding: 200px;
+    padding-bottom: 80px !important;
   }
 
   #team-title {
