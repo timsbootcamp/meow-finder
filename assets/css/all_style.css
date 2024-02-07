@@ -29,12 +29,14 @@ h2 {
     top:0px;
     width: 100vw;
 }
+
 .logo {
     position:fixed;
     left: 0px;
     top:10px;
     width:90px;
-    }
+}
+
 .navbar ul{
     z-index: 1000;
     list-style: none;
@@ -45,11 +47,13 @@ h2 {
     text-align: center;
     position:fixed;
     right: 30px;
-   }
+}
+
 .navbar li{
     display: inline-block;
     z-index: 1000;
 }
+
 .navbar a{
     text-decoration: none;
     color: rgb(252, 255, 117);
@@ -59,13 +63,12 @@ h2 {
     text-align: center;
     width: 130px;
 }
+
 .icon {
     top:25px;
     width: 30px;
     height:18px;
 }
-/* .icon:hover{
-    /* box-shadow:rgb(255, 122, 80) !important; */
 
 .navbar a:hover{
     text-decoration: none;
@@ -73,6 +76,7 @@ h2 {
     background:rgb(252, 255, 117);
     width: 130px;
 }
+
 .icon img {
     width: 100%;
     display:block;
@@ -81,7 +85,7 @@ h2 {
 /* Mobile Navbar */
 #mobile-menu-btn {
     display: none;
-  }
+}
 
 .mobile-menu {
     background-color: transparent;
@@ -90,7 +94,7 @@ h2 {
     right: 0;
     height: 60vh;
     width: 70vw;
-  }
+}
 
 /*Modal Form*/
 .modal-content {
@@ -127,7 +131,6 @@ h2 {
 }
 
 /*Footer*/
-
 footer ul {
     display: flex;
     justify-content: center;
