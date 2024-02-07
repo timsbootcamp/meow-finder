@@ -17,69 +17,74 @@ body {
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 28px;
     color: rgb(255, 255, 255);
+    padding-bottom: 50px;
 }
 
-/* NAVBAR-BEGIN */
-    .navbar {
-        position: fixed;
-        z-index: 1000;
-        top:0px;
-        width: 100vw;
-    }
-    .logo {
-        position:fixed;
-        left: 0px;
-        top:10px;
-        width:90px;
-        }
-    .navbar ul{
-        z-index: 1000;
-        list-style: none;
-        background:transparent;
-        padding: 0;
-        margin: 0;
-        top: 0px;
-        text-align: center;
-        position:fixed;
-        right: 30px;
-       }
-    .navbar li{
-        display: inline-block;
-        z-index: 1000;
-    }
-    .navbar a{
-        text-decoration: none;
-        color: rgb(252, 255, 117);
-        display: block;
-        padding: 25px;
-        font-weight: bold;
-        text-align: center;
-        width: 130px;
-    }
-    .icon {
-        top:25px;
-        width: 30px;
-        height:18px;
-    }
-    
-    .navbar a:hover{
-        text-decoration: none;
-        color: rgb(255, 122, 80);
-        background:rgb(252, 255, 117);
-        width: 130px;
-    }
-    .icon img {
-        width: 100%;
-        display:block;
-    }
-/* NAVBAR-END */
+/* Navbar */
+.navbar {
+    z-index: 1000;
+    top:0px;
+    width: 100vw;
+    position: fixed;
+    background-color: var(--orange);
+}
 
-/* MOBILE NAVBAR BEGINS */
+.logo {
+    left: 0px;
+    top:10px;
+    width:90px;
+}
+
+.navbar ul{
+    z-index: 1000;
+    list-style: none;
+    background:transparent;
+    padding: 0;
+    margin: 0;
+    top: 0px;
+    text-align: center;
+    right: 30px;
+}
+
+.navbar li{
+    display: inline-block;
+    z-index: 1000;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: rgb(252, 255, 117);
+    display: block;
+    padding: 25px;
+    font-weight: bold;
+    text-align: center;
+    width: 130px;
+}
+
+.icon {
+    top:25px;
+    width: 30px;
+    height:18px;
+}
+
+.navbar a:hover{
+    text-decoration: none;
+    color: rgb(255, 122, 80);
+    background:rgb(252, 255, 117);
+    width: 130px;
+}
+
+.icon img {
+    width: 100%;
+    display:block;
+}
+
+/* Mobile Navbar */
 #mobile-menu-btn {
     display: none;
-  }
+}
 
 .mobile-menu {
     background-color: transparent;
@@ -88,10 +93,10 @@ h3 {
     right: 0;
     height: 60vh;
     width: 70vw;
-  }
+}
 
 
-/*Modal Form*/
+/* Modal Form */
 .modal-content {
     background-color: var(--cream);
     opacity: var(--bs-backdrop-opacity);
@@ -125,8 +130,7 @@ h3 {
     padding-bottom: 50px;
 }
 
-/*Footer*/
-
+/* Footer */
 footer ul {
     display: flex;
     justify-content: center;
