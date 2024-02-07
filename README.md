@@ -3,7 +3,7 @@ Project 1 of edX Boot Camp (Front End) course to create an Interactive Front-End
 
 ![screenshot](./assets/documentation/meo_animation.gif)
 
-
+a
 
 ## Description
 
