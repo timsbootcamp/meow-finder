@@ -27,8 +27,6 @@ h3 {
     z-index: 1000;
     top:0px;
     width: 100vw;
-    position: fixed;
-    background-color: var(--orange);
 }
 
 .logo {

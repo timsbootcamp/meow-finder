@@ -39,3 +39,8 @@ body {
     position: absolute;
     top: 300px;
 }
+
+/* Footer */
+footer {
+  margin-top: 800px;
+}
