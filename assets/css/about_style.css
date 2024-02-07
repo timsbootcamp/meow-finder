@@ -78,12 +78,21 @@ body {
    
   }
 
+  #team-title {
+    text-align: center;
+    padding: 50px;
+  }
+
   /* paragraph style */
 p {
     font-size: 16px;
     color: rgb(252, 255, 117);
 }
 
+h2 {
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+}
 
 h3 {
     font-size: 24px;
