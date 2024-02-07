@@ -27,25 +27,42 @@
   </header>
 
 <!-- Modal -->
-    <div id="modal-cat-fact">
-      <div class="modal" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5">Cat Fact!</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <img id="cat-fact-img">
-              <p id="cat-fact-text"></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+  <div id="modal-cat-fact">
+    <div class="modal" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Cat Fact!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img id="cat-fact-img">
+            <p id="cat-fact-text"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+<!--Error Modal Form-->
+<div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="error-message" class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- NAVBAR-END -->
 
   <!--Error Modal Form-->
   <div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -63,11 +80,9 @@
       </div>
     </div>
   </div>
-  <!-- NAVBAR-END -->
 
   <main>
     <div class="container mt-5">
-      <h3><u>Search</u></h3>
 
       <!--Dropdown menu search form-->
       <div class="search-form-container">
@@ -119,16 +134,16 @@
           <input class="form-check-input" type="checkbox" id="id_FamilyFriendly" name="familyFriendly" value="1">
         </div>
         <div class="form-check form-check-inline">
-          <label class="form-check-label" for="id_ChildrenFriendly">Children Friendly?</label>
-          <input class="form-check-input" type="checkbox" id="id_ChildrenFriendly" name="childrenFriendly" value="1">
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label" for="id_Playfulness">Playfulness?</label>
+          <label class="form-check-label" for="id_Playfulness">Children Friendly?</label>
           <input class="form-check-input" type="checkbox" id="id_Playfulness" name="playfulness" value="1">
         </div>
         <div class="form-check form-check-inline">
-          <label class="form-check-label" for="id_FriendlywithOtherPets">Friendly with Other Pets?</label>
-          <input class="form-check-input" type="checkbox" id="id_FriendlywithOtherPets" name="friendlywithOtherPets" value="1">
+          <label class="form-check-label" for="id_FriendlyWithOtherPets">Friendly with Other Pets?</label>
+          <input class="form-check-input" type="checkbox" id="id_FriendlyWithOtherPets" name="friendlyWithOtherPets" value="1">
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label" for="id_ChildrenFriendly">Friendly with Other Pets?</label>
+          <input class="form-check-input" type="checkbox" id="id_ChildrenFriendly" name="childrenFriendly" value="1">
         </div>
       </div>
     </div>

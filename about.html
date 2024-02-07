@@ -32,43 +32,42 @@
   </header>
 
 <!-- Modal -->
-    <div id="modal-cat-fact">
-      <div class="modal" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5">Cat Fact!</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <img id="cat-fact-img">
-              <p id="cat-fact-text"></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+  <div id="modal-cat-fact">
+    <div class="modal" id="cat-fact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Cat Fact!</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img id="cat-fact-img">
+            <p id="cat-fact-text"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
-
-  <!--Error Modal Form-->
-  <div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div id="error-message" class="modal-body">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+  </div>
+<!--Error Modal Form-->
+<div class="modal fade" id="error" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="error-message" class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-  <!-- NAVBAR-END -->
+</div>
+<!-- NAVBAR-END -->
 
  <!-- Small Screen Navigation Bar -->
  <div class="mobile-menu">
@@ -88,13 +87,24 @@
 <!-- PAGE-TITLE BEGIN -->
 
 <section id="about">
-  <h3><u>About</u></h3>
+  <h2><u>About</u></h2>
 
   <p>Meow-finder is a website for cat lovers that shows different cat breeds with pictures and details, making it easy for users to help me choose the perfect cat for their household.</p>
-  <p>Technologies used: HTML, CSS, Bootstrap, Web API calls from NinjaAPI and TheCatAPI, Javascript, jQuery</p>
+  <p>This website was developed using  HTML, CSS, Bootstrap, Javascript, jQuery, Web API calls from NinjaAPI and TheCatAPI.</p>
 </section>
 
 <!-- PAGE-TITLE-ENDS -->
+
+<!-- TEAM TITLE BEGINS -->
+
+<section id="team-title">
+  <h2><u>The Cat Meow Team</u></h2>
+</section>
+
+<!-- TEAM TITLE ENDS -->
+
+
+
 
 <div class="members">
 <!-- ABOUT TIM -->
@@ -151,9 +161,11 @@
     <div class="oleksandr-text" class="float-left">
     <h3> Oleksandr Khomych</h3>
 
-   <h4><i>Back-End Developer and Quality Control Tester.</i></h4>
+   <h4><i> Back-End Developer and Quality Control Tester.</i></h4>
 
-     <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Arcu risus quis varius quam quisque id diam. </p>
+     <p>Self-motivated for learning and professional development. I want to become a Full-Stack developer and so I decided to join the edX BootCamp
+      Front-End development course. It gives me a good basis including lot of practical tasks (special thanks to them for this).</p>
+      <p>I also want to say thank you to my excellent team for their professionalism and responsibility </p>
   </div>
   </section>
 <!-- ABOUT OLEKSANDR ENDS -->
@@ -188,7 +200,6 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="./assets/js/api-thecat.js"></script>
-
 
 </body>
 </html>
