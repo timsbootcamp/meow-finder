@@ -13,70 +13,79 @@ body {
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
+    text-align: center;
 }
 
-/* NAVBAR-BEGIN */
-    /* NAVBAR BEGINS */
-    .navbar {
-        position: fixed;
-        z-index: 1000;
-        top:0px;
-        width: 100vw;
-    }
-    .logo {
-        position:fixed;
-        left: 0px;
-        top:10px;
-        width:90px;
-        }
-    .navbar ul{
-        z-index: 1000;
-        list-style: none;
-        background:transparent;
-        padding: 0;
-        margin: 0;
-        top: 0px;
-        text-align: center;
-        position:fixed;
-        right: 30px;
-       }
-    .navbar li{
-        display: inline-block;
-        z-index: 1000;
-    }
-    .navbar a{
-        text-decoration: none;
-        color: rgb(252, 255, 117);
-        display: block;
-        padding: 25px;
-        font-weight: bold;
-        text-align: center;
-        width: 130px;
-    }
-    .icon {
-        top:25px;
-        width: 30px;
-        height:18px;
-    }
-    /* .icon:hover{
-        /* box-shadow:rgb(255, 122, 80) !important; */
-    
-    .navbar a:hover{
-        text-decoration: none;
-        color: rgb(255, 122, 80);
-        background:rgb(252, 255, 117);
-        width: 130px;
-    }
-    .icon img {
-        width: 100%;
-        display:block;
-    }
-  
-/* NAVBAR-END */
-/* MOBILE NAVBAR BEGINS */
+h2 {
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    padding-bottom: 50px;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    z-index: 1000;
+    top:0px;
+    width: 100vw;
+}
+
+.logo {
+    position:fixed;
+    left: 0px;
+    top:10px;
+    width:90px;
+}
+
+.navbar ul{
+    z-index: 1000;
+    list-style: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    top: 0px;
+    text-align: center;
+    position:fixed;
+    right: 30px;
+}
+
+.navbar li{
+    display: inline-block;
+    z-index: 1000;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: rgb(252, 255, 117);
+    display: block;
+    padding: 25px;
+    font-weight: bold;
+    text-align: center;
+    width: 130px;
+}
+
+.icon {
+    top:25px;
+    width: 30px;
+    height:18px;
+}
+
+.navbar a:hover{
+    text-decoration: none;
+    color: rgb(255, 122, 80);
+    background:rgb(252, 255, 117);
+    width: 130px;
+}
+
+.icon img {
+    width: 100%;
+    display:block;
+}
+
+/* Mobile Navbar */
 #mobile-menu-btn {
     display: none;
-  }
+}
 
 .mobile-menu {
     background-color: transparent;
@@ -85,12 +94,7 @@ body {
     right: 0;
     height: 60vh;
     width: 70vw;
-  }
-
-
-
-
-
+}
 
 /*Modal Form*/
 .modal-content {
@@ -127,7 +131,6 @@ body {
 }
 
 /*Footer*/
-
 footer ul {
     display: flex;
     justify-content: center;
