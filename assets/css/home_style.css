@@ -41,6 +41,6 @@ body {
 }
 
 /* Footer */
-footer {
-  margin-top: 800px;
+footer  {
+  margin-top: 900px !important;
 }
